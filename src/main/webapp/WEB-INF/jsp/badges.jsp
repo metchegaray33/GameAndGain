@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <button>Create Badge</button>
+    <!--<button>Create Badge</button>
     <form action="createBadge" method="post">
         <h2>Nombre</h2>
         <input type="text" name="badgeName" value="${it.badges.badgeName}">
@@ -25,11 +25,11 @@
         <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
         <output for="range" class="output"></output>
         <input type="submit" name="submitBadge">
-    </form>
-    <form action="showBadges" method="post">
+    </form> -->
+    <form action="showBadges" method="get">
     	<input type="submit" name="createBadge" label="editar Insignias" onclick="showTable('table1')">
     </form>
-    <form action="updateBadge" method="post">
+    <!--<form action="updateBadge" method="post">
     	<h2>ID</h2>
         <input type="text" name="update_badgeId" value="${it.badges.update_badgeId}">
         <h2>Nombre</h2>
@@ -48,7 +48,7 @@
     	<h2>ID</h2>
         <input type="text" name="delete_badgeId" value="${it.badges.update_badgeId}">
         <input type="submit" name="delete_updateBadge">
-    </form>
+    </form> -->
 
 <div class="navbar">
 

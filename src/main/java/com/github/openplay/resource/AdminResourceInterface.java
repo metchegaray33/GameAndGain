@@ -28,7 +28,7 @@ public interface AdminResourceInterface {
 	
 	public Response deleteBadge(String badgeId) throws ParseException;
 
-	public List<Badge> showBadges();
+	public Response showBadges();
 
 	public Response updateBadge(String badgeName, String badgeValue, String badgeId) throws ParseException ;
 	

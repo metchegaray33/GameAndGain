@@ -226,12 +226,11 @@ public class AdminResource implements AdminResourceInterface {
         
     }
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
 	@GET
 	@Path("showBadges")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public List<Badge> showBadges(){
+	public Response showBadges(){
 		List<Badge> badges = adminService.showBadges();
 		for(int i = 0; i < badges.size(); i++) {
 			System.out.println(badges.get(i).getBadgeId());
@@ -239,7 +238,7 @@ public class AdminResource implements AdminResourceInterface {
             System.out.println(badges.get(i).getValue()); 
         }
 		//badges.addAttribute("badgeName", badges.get(0).getName());
-		return badges;
+		return null;
 	}
 
 	@GET
