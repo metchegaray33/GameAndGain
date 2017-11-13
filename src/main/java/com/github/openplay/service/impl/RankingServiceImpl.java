@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.openplay.model.UserInterface;
+import com.github.openplay.model.impl.Badge;
 import com.github.openplay.model.impl.CampaignsHasUsers;
 import com.github.openplay.model.impl.Comment;
 import com.github.openplay.model.impl.UsersReceivesBadges;
 import com.github.openplay.repository.AdminRepository;
+import com.github.openplay.repository.BadgeRepository;
 import com.github.openplay.repository.RankingRepository;
 import com.github.openplay.repository.UsersReceivesBadgesRepository;
 import com.github.openplay.service.RankingService;
@@ -26,6 +28,9 @@ public class RankingServiceImpl implements RankingService {
 	
 	@Autowired
 	private UsersReceivesBadgesRepository usersReceivesBadgesRepository;
+	
+	@Autowired
+	private BadgeRepository badgeRepository;
 	
 	@Transactional
 	public List<CampaignsHasUsers> getRanking(String name) {
@@ -46,6 +51,14 @@ public class RankingServiceImpl implements RankingService {
 		List<UsersReceivesBadges> badges = usersReceivesBadgesRepository.findById(id);
 		return badges;
 	}
+	
+	@Transactional
+	public Badge getBadgesName(int id) {
+		
+		Badge badge = badgeRepository.findById(id);
+		return badge;
+	}
 
 }
+
 
