@@ -19,6 +19,7 @@ import org.glassfish.jersey.server.mvc.Viewable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.github.openplay.model.impl.Badge;
 import com.github.openplay.model.impl.CampaignsHasUsers;
 import com.github.openplay.model.impl.Comment;
 import com.github.openplay.model.impl.UsersReceivesBadges;
@@ -52,20 +53,26 @@ public class RankingResource {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
 		
-		List<UsersReceivesBadges> badges = rankingService.getBadge(name);
+		List<UsersReceivesBadges> userBadges = rankingService.getBadge(name);
 		List<CampaignsHasUsers> scoresR = rankingService.getRanking(name);
 		int scoreGeneral = 0;
 		int scoreBagdes = 0;
+		int badgeId = 0;
+		Badge badge = null;
 		
-		for (int i=0; i<badges.size(); i++){
-			scoreBagdes = scoreBagdes + badges.get(i).getValue();
+		for (int i=0; i<userBadges.size(); i++){
+			scoreBagdes = scoreBagdes + userBadges.get(i).getValue();
+			badgeId = userBadges.get(i).getBadges_BadgeId();
+			badge = rankingService.getBadgesName(badgeId);
+			System.out.println("Una insignia es: " + badge.getName());
+			System.out.println("Su imagen es: " + badge.getIcon());
 		}
 		
 		for (int i=0; i<scoresR.size(); i++){
 			scoreGeneral = scoreGeneral + scoresR.get(i).getCampaigns_Score();
 		}
 		
-		System.out.println("El scores general de este usuario es: " + scoreGeneral);
+		System.out.println("El scores general de " + name + " es: " + scoreGeneral);
 		System.out.println("El scores de los trofeos es: " + scoreBagdes);
 
 		return Response.ok().entity(new Viewable("/ranking")).build();
