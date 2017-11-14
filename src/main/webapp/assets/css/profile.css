@@ -1,3 +1,5 @@
+@CHARSET "ISO-8859-1";
+
 @font-face{
 	font-family: quickBold;
 	src: url("fonts/Quicksand-Bold.ttf");
@@ -130,7 +132,7 @@ body{
 
 .div_profile{
 	margin-top: 90px;
-	height: 400px;
+	height: 1200px;
 	width: 1000px;
 	margin-left: 15%;
 	background-color: #f0efe7;
@@ -204,8 +206,53 @@ body{
 	margin-top:10px;
 }
 
-.profile-pic{
-	background-image: url(../img/searchicon.png);
+.profilepic{
+	background-image: url(../img/profile.jpg);
+	background-color: red;
+	margin-top: 80px;
+	margin-left: 50px;
+	width: 220px;
+	height: 200px;
+	position: absolute;
+	border: solid white 10px;
+	background-repeat: no-repeat;
+
+	background-size: 200px;
+}
+
+.div_profile-editBtn{
+	background-color: #ce5f5f;
+    color: white;
+    width: 250px;
+    position: absolute;
+   top: 1130px;
+    height: 40px;
+    font-size: 28px;
+    margin-left: 38px;
+    text-align: center;
+    font-family: quickMedium; 
+     box-shadow: 0px 10px 0px #aa4d4d;
+    border-radius:6px;
+ 	border-bottom: none;
+ 	border-right: none;
+ 	border-top: none;
+ 	border-left: none;
+    
+}
+
+.signup_section-form-option{
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   border:none;
+   text-align: center;
+   outline:none;
+
+   background-color: #f0efe7;
+   margin-top: 6px;
+   color: gray;
+   font-size: 23px;
+
 }
 
 .footer{
