@@ -1,9 +1,11 @@
 package com.github.openplay.resource.impl;
 
 import java.text.ParseException;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -18,6 +20,7 @@ import org.springframework.stereotype.Component;
 
 import com.github.openplay.model.impl.Campaign;
 import com.github.openplay.model.impl.CampaignsHasUsers;
+import com.github.openplay.model.impl.Comment;
 import com.github.openplay.model.impl.User;
 import com.github.openplay.resource.PlayerResourceInterface;
 import com.github.openplay.service.PlayerService;
@@ -30,11 +33,19 @@ public class PlayerResource implements PlayerResourceInterface{
 	@Autowired
 	private PlayerService playerService; 
 	
+	@GET
+	@Path("registerCampaign")
+	@Produces(MediaType.TEXT_HTML)
+	public Response registerCampaign() {
+		return Response.ok(new Viewable("/temporalRegister")).build();
+	}
+	
 	@POST
 	@Path("registerCampaign")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public Response registerCampaign(@FormParam("idUser") String idUser ,
+	public Response registerCampaign(
+			@FormParam("idUser") String idUser ,
 			@FormParam("idCampaign") String idCampaign)
 			throws ParseException {
 
@@ -59,4 +70,7 @@ public class PlayerResource implements PlayerResourceInterface{
 		
 		return Response.ok().entity(new Viewable("/login")).build();
 	}
+	
+	
+
 }
