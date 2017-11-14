@@ -9,7 +9,8 @@
 		<div class="access_menu">
 			<a class="access_menu-link" href="webapi/adminResource/signup">Signup</a>
 			<a class="access_menu-link" href="webapi/adminResource/login">Login</a>
-			<a class="access_menu-link" href="webapi/adminResource/temporalComment">Comentario</a>
+			<a class="access_menu-link" href="webapi/playerResource/registerCampaign">Registrarse</a>
+			<a class="access_menu-link" href="webapi/projectResource/getProjectState">Obras</a>
 		</div>
 		<div class="logo_header">
 			<section class="logo_title"></section>
@@ -26,7 +27,7 @@
 			<a class="menu_bar-link" href="#">INICIO</a>
 			<a class="menu_bar-link" href="#">MI PERFIL</a>
 			<a class="menu_bar-link" href="#">JUGAR</a>
-			<a class="menu_bar-link" href="#">RANKINGS</a>
+			<a class="menu_bar-link" href="webapi/rankingResource/getRanking">RANKINGS</a>
 			<form >
 				<input type="text" class="menu_bar-link search" placeholder="Buscar">
 			</form>
@@ -93,7 +94,7 @@
 						<div class="paper-2">
 								
 							<img src="assets/img/paper2.png" >
-							<p class="paper-text-2">¿Que estas esperando?<br>
+							<p class="paper-text-2">Â¿Que estas esperando?<br>
 								JUGA por una buena causa</p>
 							
 						</div>
@@ -105,7 +106,7 @@
 	
 	<footer class="footer">
 		<img src="assets/img/gg.png" class="footer-img">
-		<p class="footer-paragraph">2017 © puto el que copia</p>
+		<p class="footer-paragraph">2017 Â© puto el que copia</p>
 		<div class="footer-div">
 				<table class="footer_table-about">
 					<th class="footer-table-about-header">About</th>
