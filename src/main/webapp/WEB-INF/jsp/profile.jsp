@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -50,7 +55,7 @@
 					<th class="div_profile-table-header">Mi Perfil</th>
 			</table>
 			<section class="profilepic"> ,</section>
-			<button class="divprofileditBtn">Editar Perfil</button> 
+			<button class="div_profile-editBtn">Editar Perfil</button> 
 			<form:form id="myForm" class="div_profile-form" method="post" action="login">
 				<label for="firstNameInput" class="div_profile-form-labels">Nombre</label>
 				<input type="text" class="div_profile-form-inputs" name="firstName" id="firstNameInput" placeholder="Tomas" value="${it.user.firstName}" />
