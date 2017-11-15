@@ -453,7 +453,7 @@ CREATE TABLE IF NOT EXISTS `game`.`campaigns` (
 	`campaign_Types_Campaign_TypeId` INT NOT NULL,
 	`campaign_States_Campaign_StateId` INT NOT NULL,
 	`users_userId` INT NOT NULL,
-        `project_projectId` INT UNSIGNED NOT NULL,
+  `project_projectId` INT UNSIGNED NOT NULL,
 	PRIMARY KEY (`campaignsId`),
 	CONSTRAINT `fk_Campaigns_Interests1`
 		FOREIGN KEY (`interests_InterestId`)
@@ -470,18 +470,17 @@ CREATE TABLE IF NOT EXISTS `game`.`campaigns` (
 		REFERENCES `game`.`campaign_States` (`campaign_StateId`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
-        CONSTRAINT `fk_users_userId`
+  CONSTRAINT `fk_users_userId`
 		FOREIGN KEY (`users_userId`)
 		REFERENCES `game`.`users` (`userId`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
-        CONSTRAINT `fk_project_project1`
+  CONSTRAINT `fk_project_project1`
 		FOREIGN KEY (`project_projectId`)
-		REFERENCES `game`.` projects` (`projectId`)
+		REFERENCES `game`.`projects` (`projectId`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- ------------------------------------------------------
 -- Define Values
@@ -534,6 +533,3 @@ INSERT INTO `game`.`campaign_Types` (description) VALUES ('Educative');
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
-
