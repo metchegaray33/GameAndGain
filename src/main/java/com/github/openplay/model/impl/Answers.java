@@ -1,25 +1,13 @@
 package com.github.openplay.model.impl;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import com.github.openplay.model.AnswersInterface;
-import com.github.openplay.model.CampaignInterface;
-
-
-
-import java.io.Serializable;
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Component
@@ -35,17 +23,17 @@ public class Answers implements AnswersInterface {
 	
 	@NotEmpty
 	@Size(min=4, max=40)
-	private String answer;
+	public String answer;
 
 	@NotEmpty
 	@Column(name="answer_Value", columnDefinition = "BIT", length = 1)
-	private boolean answer_value;
+	public boolean answer_value;
 	
 	// Foreign keys association
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="questions_QuestionId")
-	private Question question;
+	public Question question;
 	
 
 	public int getId() {

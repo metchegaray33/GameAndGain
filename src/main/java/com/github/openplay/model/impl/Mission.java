@@ -1,24 +1,16 @@
 package com.github.openplay.model.impl;
 
-import java.util.Date;
 import java.util.HashSet;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
-
-import com.github.openplay.model.CampaignInterface;
-
 
 import com.github.openplay.model.MissionInterface;
 
-import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -32,31 +24,31 @@ public class Mission implements MissionInterface {
 	@Id
 	@Column(name="missionId")
 	@GeneratedValue
-	private int missionId;
+	public int missionId;
 	
 	@NotEmpty
 	@Column(name="name")
 	@Size(min=4, max=60)
-	private String name;
+	public String name;
 	
 	@NotEmpty
 	@Column(name="description")
 	@Size(min=4, max=300)
-	private String description;
+	public String description;
 	
 	@Column(name="score")
-	private Integer score;
+	public Integer score;
 
 	// Foreign keys association
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="campaigns_CampaignsId")
-	private Campaign campaign;
+	public Campaign campaign;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="difficulties_DifficultyId")
-	private Difficulties difficulty;
+	public Difficulties difficulty;
 	
 	@OneToMany(fetch=FetchType.LAZY ,mappedBy = "mission")
 	private Set<Question> question = new HashSet<Question>(0);

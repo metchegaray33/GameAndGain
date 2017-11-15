@@ -1,25 +1,17 @@
 package com.github.openplay.model.impl;
 
-import java.util.Date;
 import java.util.HashSet;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
-
-import com.github.openplay.model.CampaignInterface;
-
 
 import com.github.openplay.model.impl.Mission;
 import com.github.openplay.model.QuestionsInterface;
 
-import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -33,22 +25,22 @@ public class Question implements QuestionsInterface {
 	@Id
 	@GeneratedValue
 	@Column(name="questionId")
-	private int questionId;
+	public int questionId;
 	
 	@NotEmpty
 	@Size(min=4, max=20)
-	private String question;
+	public String question;
 	
 
 	@NotEmpty
-	private Integer score;
+	public Integer score;
 
 
 	// Foreign keys association
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="missionId")
-	private Mission mission;
+	public Mission mission;
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy = "question")
 	private Set<Answers> answer = new HashSet<Answers>(0);
