@@ -1,3 +1,6 @@
+
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -43,6 +46,13 @@
 .lblpadding {
 	padding: 10px;
 }
+
+.centpadding {
+	padding: 50px;
+}
+
+
+
 </style>
 
 </head>
@@ -101,9 +111,12 @@
 		</table>
 	
 	<form action="getRanking" method="post">
-		<label class="signup_section-form-labels lblpadding">Nombre del usuario  </label>
+		<label class="signup_section-form-labels centpadding">Nombre del usuario  </label>
 		<input type="text" class="signup_section-form-inputs" value="${it.campaignsHasUsers.name}" name="name" id = "userId" placeholder="Usuario"/>
 		<input type="submit" value="IR" id="nameT" class="btn btn-primary signup_section-form-btns lblpadding">
+		<p><label class="signup_section-form-labels centpadding">Nombre  </label></p>
+		<p><label class="signup_section-form-labels centpadding">Puntos Totales Acumulados  </label></p>
+		<p><label class="signup_section-form-labels centpadding">Ultimas Medallas Recibidas  </label></p>
 	</form>
 	</section>
 	
@@ -152,4 +165,3 @@
 		 </footer>
 </body>
 </html>
-
