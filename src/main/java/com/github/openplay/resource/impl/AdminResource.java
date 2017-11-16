@@ -67,6 +67,13 @@ public class AdminResource implements AdminResourceInterface {
 	public Response signup() {
 		return Response.ok(new Viewable("/signup")).build();
 	}
+	
+	@GET
+	@Path("not_logged_in")
+	@Produces(MediaType.TEXT_HTML)
+	public Response notLoggedIn() {
+		return Response.ok(new Viewable("/notLoggedIn")).build();
+	}
 
 	@POST
 	@Path("signup")
@@ -247,7 +254,128 @@ public class AdminResource implements AdminResourceInterface {
 	public Response profile() {
 		return Response.ok(new Viewable("/profile")).build();
 	}
-		
+	
+	@POST
+	@Path("getProfile")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	public Response getProfile(
+			@FormParam("userId") String userId)
+			throws ParseException {
+				if (userId == null) {
+					return Response.status(Status.PRECONDITION_FAILED).build();
+				}
+				User usr = (User) adminService.getUser(Integer.parseInt(userId));
+				
+				System.out.println(usr.getName());
+				System.out.println(usr.getLastname());
+				System.out.println(usr.getCountry());
+				System.out.println(usr.getMail());
+				System.out.println(usr.getPhone());
+				System.out.println(usr.getPoints());
+				System.out.println(usr.getBirthdate());
+				
+				//las insignias en "UserHasBadge" grupo de Eliseo
+				
+				//los comentarios grupo de Gabriela
+				
+				return Response.ok().entity(new Viewable("/success")).build();
+	}
+	
+	@POST
+	@Path("updateProfile")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	public Response updateProfile
+			(@FormParam("userId") String userId,		
+			@FormParam("emailAddress") String emailAddress,
+			@FormParam("password") String password,
+			@FormParam("firstName") String firstName,
+			@FormParam("lastName") String lastName,
+			@FormParam("birthdate") String birthdate,
+			@FormParam("phone") String phone,
+			@FormParam("country") String country,
+			@FormParam("interest") String interest,
+			@FormParam("role") String role 
+			)
+			throws ParseException {
+
+				if (userId == null) {
+					return Response.status(Status.PRECONDITION_FAILED).build();
+				}			
+				
+				User usr = (User) adminService.getUser(Integer.parseInt(userId));
+				
+				User updatedUser = new User();
+				
+				updatedUser.setUserId(Integer.parseInt(userId));
+				
+				if(password != null && !password.isEmpty()){
+					updatedUser.setPassword(password);
+				} else {
+					updatedUser.setPassword(usr.getPassword());
+				}
+				
+				
+				if (firstName != null && !firstName.isEmpty()) {
+					updatedUser.setName(firstName);
+				} else {
+					updatedUser.setName(usr.getName());
+				}
+
+				
+				
+				if (lastName != null && !lastName.isEmpty()) {
+					updatedUser.setLastname(lastName);
+				} else {
+					updatedUser.setLastname(usr.getLastname());
+				}
+				
+				
+				if (emailAddress != null && !emailAddress.isEmpty()) {
+					updatedUser.setMail(emailAddress);
+				} else {
+					updatedUser.setMail(usr.getMail());
+				}
+				
+				
+				if (phone != null && !phone.isEmpty()) {
+					updatedUser.setPhone(phone);
+				} else {
+					updatedUser.setPhone(usr.getPhone());
+				}
+				
+				if (country != null && !country.isEmpty()) {
+					updatedUser.setCountry(country);
+					System.out.println(country);
+				} else {
+					updatedUser.setCountry(usr.getCountry());					
+				}
+				
+				if (interest != null && !interest.isEmpty()) {
+					updatedUser.setInterests_InterestId(Integer.parseInt(interest));
+				} else {
+					updatedUser.setInterests_InterestId(usr.getInterests_InterestId());
+				}
+				
+				
+				if (role != null && !role.isEmpty()) {
+					updatedUser.setRoles_RoleId(Integer.parseInt(role));
+				} else {
+					updatedUser.setRoles_RoleId(usr.getRoles_RoleId());
+				}
+				
+				
+				if (birthdate != null && !birthdate.isEmpty() && birthdate != "") {
+					updatedUser.setBirthdate(new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy").parse(birthdate).getTime()));
+				} else {
+					updatedUser.setBirthdate(usr.getBirthdate());
+				}
+				
+				adminService.save(updatedUser);
+				return Response.ok().entity(new Viewable("/success")).build();
+			}
+	
 	@POST
 	@Path("updateBadge")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)

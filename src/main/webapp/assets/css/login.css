@@ -73,9 +73,7 @@ body{
 
 }
 
-.menu_bar-link ~ .menu_bar-link{
-	background-color: #ce5f5f;
-}
+
 .menu_bar-link{
 	font-family: quickMedium;
 	flex-grow: 1;
@@ -86,7 +84,7 @@ body{
 	font-size: 40px;
 	text-align: center;
 	text-decoration: none;
-	background-color: #aa4d4d;
+	background-color:  #ce5f5f;
 	
 }
 .menu_bar-link:hover{
@@ -238,12 +236,56 @@ body{
 }
 
 
+.access_menu{
+	background-color: white;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	
+	justify-content: flex-end;
+	
 
-.login_section-form-btns{
-	margin-top:10px;
+}
+.access_menu-link{
+	font-family: quickMedium;
+	color: #ce5f5f;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 5px;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+	
+	
+}
+.access_menu-link:hover, .access_menu-link:focus{
+	color: #aa4d4d;
+	text-decoration: none;
 }
 
 
+.login_section-form-btns{
+	margin-top: 50px;
+}
+
+.btn-cancel{
+	width: 150px;
+	border: none;
+	font-size: 20px;
+	font-family: quickMedium;
+}
+.btn-login {
+	width: 150px;
+	background-color: #55aaff;
+	border: none;
+	font-size: 20px;
+	font-family: quickMedium;
+}
+.btn-login:hover, .btn-login:focus{
+	background-color: #44bbff;
+	text-decoration: none;
+	color: white;
+}
 
 .footer{
 	background-color: white;

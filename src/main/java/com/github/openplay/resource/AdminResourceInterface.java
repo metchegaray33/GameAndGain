@@ -11,6 +11,8 @@ import com.github.openplay.model.impl.Badge;
 public interface AdminResourceInterface {
 
 	public Response signup();
+	
+	public Response notLoggedIn();
 
 	public Response signup(String emailAddress, String password, String firstName, String lastName,
 			String birthdate, String phone, String country, String interest, String role)
@@ -29,6 +31,14 @@ public interface AdminResourceInterface {
 	public Response deleteBadge(String badgeId) throws ParseException;
 
 	public Response showBadges();
+	
+	public Response profile();
+	
+	public Response getProfile(String userId) throws ParseException;
+	
+	public Response updateProfile(String userId, String emailAddress, String password, String firstName, String lastName,
+			String birthdate, String phone, String country, String interest, String role)
+			throws ParseException;
 
 	public Response updateBadge(String badgeName, String badgeValue, String badgeId) throws ParseException ;
 	

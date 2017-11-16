@@ -14,55 +14,9 @@
 
 </head>
 <body>
-    <!--<button>Create Badge</button>
-    <form action="createBadge" method="post">
-        <h2>Nombre</h2>
-        <input type="text" name="badgeName" value="${it.badges.badgeName}">
-        <h2>Valor</h2>
-        <label for="range">
-		      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-		</label>
-        <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
-        <output for="range" class="output"></output>
-        <input type="submit" name="submitBadge">
-    </form> -->
-    <form action="showBadges" method="get">
-    	<input type="submit" name="createBadge" label="editar Insignias" onclick="showTable('table1')">
-    </form>
-    <!--<form action="updateBadge" method="post">
-    	<h2>ID</h2>
-        <input type="text" name="update_badgeId" value="${it.badges.update_badgeId}">
-        <h2>Nombre</h2>
-        <input type="text" name="update_badgeName" value="${it.badges.update_badgeName}">
-        <h2>Valor</h2>
-        <label for="range">
-		      <input type="range" name="update_badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.update_badgeValue}"/>
-		</label>
-        <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
-        <output for="range" class="output"></output>
-        <input type="submit" name="submit_updateBadge">
-    </form>
 
-    <button>Delete Badge</button>
-    <form action="deleteBadge" method="post">
-    	<h2>ID</h2>
-        <input type="text" name="delete_badgeId" value="${it.badges.update_badgeId}">
-        <input type="submit" name="delete_updateBadge">
-    </form> -->
 
 <div class="navbar">
-
-		<div class="access_menu">
-
-			<a class="access_menu-link" href="webapi/adminResource/signup">Signup</a>
-
-			<a class="access_menu-link" href="webapi/adminResource/login">Login</a>
-
-			<a class="access_menu-link" href="webapi/adminResource/temporalComment">Comentario</a>
-
-			<a class="access_menu-link" href="webapi/adminResource/badges">Administrar Insignias</a>
-
-		</div>
 
 		<div class="logo_header">
 
@@ -92,14 +46,55 @@
 
 			<a class="menu_bar-link" href="#">MI PERFIL</a>
 
-			<a class="menu_bar-link" href="#">JUGAR</a>
-
 			<a class="menu_bar-link" href="#">RANKINGS</a>
 
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 
 		</div>
-	<div class="buttons-div">
+		
+		
+		    Create Badge
+    <form action="createBadge" method="post">
+        <h2>Nombre</h2>
+        <input type="text" name="badgeName" value="${it.badges.badgeName}">
+        <h2>Valor</h2>
+        <label for="range">
+		      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+		</label>
+        <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
+        <output for="range" class="output"></output>
+        <input type="submit" name="submitBadge">
+    </form>
+    
+    Get Badges
+    <form action="showBadges" method="get">
+    	<input type="submit" name="createBadge" label="editar Insignias" onclick="showTable('table1')">
+    </form>
+    
+    Update Badge
+    <form action="updateBadge" method="post">
+    	<h2>ID</h2>
+        <input type="text" name="update_badgeId" value="${it.badges.update_badgeId}">
+        <h2>Nombre</h2>
+        <input type="text" name="update_badgeName" value="${it.badges.update_badgeName}">
+        <h2>Valor</h2>
+        <label for="range">
+		      <input type="range" name="update_badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.update_badgeValue}"/>
+		</label>
+        <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
+        <output for="range" class="output"></output>
+        <input type="submit" name="submit_updateBadge">
+    </form>
+
+    Delete Badge
+    <form action="deleteBadge" method="post">
+    	<h2>ID</h2>
+        <input type="text" name="delete_badgeId" value="${it.badges.update_badgeId}">
+        <input type="submit" name="delete_updateBadge">
+    </form>
+		
+		
+	<!-- <div class="buttons-div">
 	    <button class="buttons" onclick="showCreateForm()" >Create Badge</button>
 	    <form action="createBadge" method="post" class="badges-form" id="creatBadge-form">
 	        <h2 class="form-inputs">Nombre</h2>
@@ -142,7 +137,7 @@
 	    
 	
 	    <button class="buttons">Delete Badge</button>
-	  </div>
+	  </div>-->
 	
 	
 	<footer class="footer">

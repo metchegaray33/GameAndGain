@@ -51,5 +51,7 @@ public interface AdminService {
 	List<Badge> showBadges();
 	BadgeInterface updateBadge(BadgeInterface badge);
 	void deleteBadge(Integer badgeId);
+	public UserInterface getUser(Integer userId);
+	UserInterface updateUser(UserInterface user);
 	//CommentInterface getComment(CommentInterface comment);
 }

@@ -31,6 +31,10 @@
 
 
 	<div class="navbar">
+	<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Registrarse</a>
+			<a class="access_menu-link" href="./login">Iniciar Sesión</a>
+		</div>
 	<div class="logo_header">
 			<section class="logo_title"></section>
 		</div>
@@ -44,7 +48,7 @@
 		
 		<div class="menu_bar">
 			<a href="#" class="menu_bar-link">INICIO</a>
-			<a href="#" class="menu_bar-link">MI PERFIL</a>
+			<a href="./profile" class="menu_bar-link">MI PERFIL</a>
 			<a href="#" class="menu_bar-link">JUGAR</a>
 			<a href="#" class="menu_bar-link">RANKINGS</a>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
@@ -77,9 +81,13 @@
 				</tr>
 				
 			</table>
+			
+			
 	</section>
 	
-	
+	<section>
+		<div class="play-btn">Juega Ahora!</div>
+	</section>
 	<section class="collaborators_section">	
 			<table class="collaborators_section-table">
 				<th class="collaborators_section-table-header">COLABORADORES</th>

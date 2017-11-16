@@ -101,6 +101,49 @@ body{
 	text-decoration: none;
 }
 
+.access_menu{
+	background-color: white;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	
+	justify-content: flex-end;
+	
+
+}
+.access_menu-link{
+	font-family: quickMedium;
+	color: #ce5f5f;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 5px;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+	
+	
+}
+.access_menu-link:hover, .access_menu-link:focus{
+	color: #aa4d4d;
+	text-decoration: none;
+}
+
+.play-btn{
+	width: 600px;
+	color: white;
+	height: 90px;
+	font-size: 50px;
+	padding: 20px;
+	text-align:center;
+	float: right;
+	background-color: #55aaff;
+	font-family: quickMedium;
+	margin: 300px 400px 0 0;
+	border-radius: 60px;
+	display: relative; 
+	box-shadow: 0px 10px 0px #518ae8;
+}
+
 
 .search{
 	width: 50px;

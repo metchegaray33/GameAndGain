@@ -48,6 +48,15 @@ public class AdminServiceImpl implements  AdminService {
 		return badgeRepository.save((Badge) badge);
 	};
 	
+	public UserInterface getUser(Integer userId){
+		return adminRepository.findByUserId(userId);
+	}
+	
+	@Transactional
+	public UserInterface updateUser(UserInterface user){
+		return adminRepository.save((User) user);
+	}
+	
 	public void deleteBadge(Integer badgeId){
 		badgeRepository.deleteById(badgeId);
 	}
