@@ -50,7 +50,6 @@ body{
   	background-size: 100%;
   	background-repeat: no-repeat;
   	z-index: -1;
-
 }
 
 .logo_title{
@@ -130,7 +129,6 @@ body{
 
 .div_profile{
 	margin-top: 90px;
-	height: 400px;
 	width: 1000px;
 	margin-left: 15%;
 	background-color: #f0efe7;
@@ -139,6 +137,7 @@ body{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 350px;
+	padding-bottom: 40px;
 }
 
 .div_profile-table{
@@ -151,7 +150,10 @@ body{
     font-family: quickMedium; 
      box-shadow: 0px 10px 0px #d8d47c;
     border-radius:6px;
+    margin-bottom: 40px;
 }
+
+
 .div_profile-table-header{
 	background-color: #f1ed8c;
     color: white;
@@ -160,9 +162,8 @@ body{
     font-size: 35px;
     text-align: center;
     font-family: quickMedium; 
-     box-shadow: 0px 10px 0px #d8d47c;
-    border-radius:6px;
- 
+    box-shadow: 0px 10px 0px #d8d47c;
+    border-radius:6px; 
     bottom: 50px;
 	
 }
@@ -180,7 +181,6 @@ body{
 	font-family: quickRegular;
 	font-size: 25px;
 	color: gray;
-	
 	margin-top: 50px;
 }
 
@@ -204,8 +204,53 @@ body{
 	margin-top:10px;
 }
 
+.signup_section-form-labels{
+	font-family: quickRegular;
+	font-size: 25px;
+	color: gray;
+	margin-top: 10px;
+}
+
+
+.signup_section-form-select {
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   border:none;
+   text-align: center;
+   outline:none;
+
+   background-color: #f0efe7;
+   margin-top: 6px;
+   color: gray;
+   font-size: 23px;	
+}
+
 .profile-pic{
 	background-image: url(../img/searchicon.png);
+}
+
+.btn-cancel{
+	width: 150px;
+	margin-top: 50px;
+	border: none;
+	font-size: 20px;
+	font-family: quickMedium;
+}
+
+.btn-login {
+	width: 150px;
+	margin-top: 50px;
+	background-color: #55aaff;
+	border: none;
+	font-size: 20px;
+	font-family: quickMedium;
+}
+
+.btn-login:hover, .btn-login:focus{
+	background-color: #44bbff;
+	text-decoration: none;
+	color: white;
 }
 
 .footer{
