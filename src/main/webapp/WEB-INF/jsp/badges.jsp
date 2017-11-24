@@ -19,41 +19,201 @@
 <div class="navbar">
 
 		<div class="logo_header">
-
 			<section class="logo_title"></section>
-
 		</div>
 
 		<div class="navbar-header">
-
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
-
 				data-target=".navbar-responsive-collapse">
-
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-
-					class="icon-bar"></span>
-
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
-
 		</div>
-
 		
-
 		<div class="menu_bar">
-
 			<a class="menu_bar-link" href="#">INICIO</a>
-
-			<a class="menu_bar-link" href="#">MI PERFIL</a>
-
+			<a class="menu_bar-link" href="./profile">MI PERFIL</a>
 			<a class="menu_bar-link" href="#">RANKINGS</a>
-
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
-
 		</div>
 		
-		
-		    Create Badge
+	</div>	
+	
+	<section class="badges-btns">
+		<table class="badges-btns--title">
+				<th class="badges-btns--title--header">Administrar Insignias</th>
+		</table>
+		<button class="badge-btns--btn" onclick="showCreateForm()">Crea una Insignia</button>
+		<div id="creatBadge-form">
+			<form id="create-badge--form" action="createBadge" method="post">
+		        <h2>Nombre</h2>
+		        <input type="text" name="badgeName" value="${it.badges.badgeName}">
+		        <h2>Valor</h2>
+		        <label for="range">
+				      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+				</label>
+		        <output for="range" class="output"></output>
+		        <input type="submit" class="submit-badge--btn" name="submitBadge" value="Crear Insignia!">
+		    </form>
+		</div>
+		<button class="badge-btns--btn" onclick="showBadgesTable()">Modifica Insignias</button>
+		<div id="badgesTable">
+			<div class="table">
+			    <div class="row header">
+			      <div class="cell">
+			        ID
+			      </div>
+			      <div class="cell">
+			        Nombre
+			      </div>
+			      <div class="cell">
+			        Valor
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        1
+			      </div>
+			      <div class="cell">
+			        <input type="text" name="badgeName" value="Nombre1">
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        1
+			      </div>
+			      <div class="cell">
+			        <input type="text" name="badgeName" value="Nombre1">
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        1
+			      </div>
+			      <div class="cell">
+			        <input type="text" name="badgeName" value="Nombre1">
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    			    
+			    <div class="row">
+			      <div class="cell">
+			        1
+			      </div>
+			      <div class="cell">
+			        <input type="text" name="badgeName" value="Nombre1">
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    <!-- End of table -->
+			  </div>
+			  <input type="submit" class="submit-badge--btn" name="delete_updateBadge" value="Realizar Cambios">
+		</div>
+		<button class="badge-btns--btn" onclick="showBagdesTableForDeleting()">Elimina Insignias</button>
+		<div id="badgesTable-delete">
+			<div class="table">
+			    <div class="row header">
+			      <div class="cell">
+			        ID
+			      </div>
+			      <div class="cell">
+			        Nombre
+			      </div>
+			      <div class="cell">
+			        Valor
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        <input type="radio">
+			      </div>
+			      <div class="cell">
+			        Nombre1
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        <input type="radio">
+			      </div>
+			      <div class="cell">
+			        Nombre1
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			      <div class="cell">
+			        <input type="radio">
+			      </div>
+			      <div class="cell">
+			        Nombre1
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    			    
+			    <div class="row">
+			      <div class="cell">
+			        <input type="radio">
+			      </div>
+			      <div class="cell">
+			        Nombre1
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					</label>
+			      </div>
+			    </div>
+			    
+			  </div> <!-- End of table  -->
+			  <input type="submit" class="submit-badge--btn" name="delete_updateBadge" value="Eliminar">
+		</div>
+			<%-- <form action="deleteBadge" id="delete-badge--form"  method="post">
+		    	<h2>ID</h2>
+		        <input type="text" name="delete_badgeId" value="${it.badges.update_badgeId}">
+		        <input type="submit" name="delete_updateBadge">
+		    </form> --%>
+	</section>
+	
+	
+	<!-- Create Badge
     <form action="createBadge" method="post">
         <h2>Nombre</h2>
         <input type="text" name="badgeName" value="${it.badges.badgeName}">
@@ -65,13 +225,14 @@
         <output for="range" class="output"></output>
         <input type="submit" name="submitBadge">
     </form>
+     -->
     
-    Get Badges
+    <%-- Get Badges
     <form action="showBadges" method="get">
     	<input type="submit" name="createBadge" label="editar Insignias" onclick="showTable('table1')">
-    </form>
+    </form> --%>
     
-    Update Badge
+    <!-- Update Badge
     <form action="updateBadge" method="post">
     	<h2>ID</h2>
         <input type="text" name="update_badgeId" value="${it.badges.update_badgeId}">
@@ -84,14 +245,14 @@
         <%-- <input type="range" name="badgeValue" value="${it.badges.badgeValue}" min="0" max="10" >  --%>
         <output for="range" class="output"></output>
         <input type="submit" name="submit_updateBadge">
-    </form>
+    </form> -->
 
-    Delete Badge
-    <form action="deleteBadge" method="post">
+    <!-- Delete Badge -->
+    <!--<form action="deleteBadge" method="post">
     	<h2>ID</h2>
         <input type="text" name="delete_badgeId" value="${it.badges.update_badgeId}">
         <input type="submit" name="delete_updateBadge">
-    </form>
+    </form>-->
 		
 		
 	<!-- <div class="buttons-div">

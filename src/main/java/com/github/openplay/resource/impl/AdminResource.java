@@ -143,14 +143,16 @@ public class AdminResource implements AdminResourceInterface {
 			int valor = adminService.findByUserRoleId(emailAddress);
 			
 			if (valor==1){
-			return Response.ok().entity(new Viewable("/success")).build();
-		}else if(valor==2){
+				return Response.ok().entity(new Viewable("/success")).build();
+			}else if(valor==2){
 				return Response.ok().entity(new Viewable("/donor")).build();
 			}else if(valor==3){
 				return Response.ok().entity(new Viewable("/beneficiary")).build();
 			}else if(valor==4){
-					return Response.ok().entity(new Viewable("/campaign_manager")).build();
-				}else {
+				return Response.ok().entity(new Viewable("/campaign_manager")).build();
+			}else if(valor==5){
+				return Response.ok().entity(new Viewable("/admin")).build();
+			}else {
 				return Response.status(Status.BAD_REQUEST).entity(new Viewable("/failure")).build();
 			}
 			}else {
