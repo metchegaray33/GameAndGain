@@ -11,6 +11,7 @@
 			<a class="access_menu-link" href="webapi/adminResource/login">Login</a>
 			<a class="access_menu-link" href="webapi/commentResource/temporalComment">Comentario</a>
 			<a class="access_menu-link" href="webapi/projectResource/getProjectState">Obras</a>
+			<a class="access_menu-link" href="webapi/getCampaignResource/getCampaign">Campaña</a>
 		</div>
 		<div class="logo_header">
 			<section class="logo_title"></section>
