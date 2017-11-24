@@ -17,7 +17,9 @@
 			<!--  <a class="access_menu-link" href="webapi/adminResource/badges">Administrar Insignias</a> -->
 		</div>
 		<div class="logo_header">
-			<div class="logo_title"></div> 
+			<a href="#">
+				<img src="assets/img/logo.png" class="logo_title"> 
+			</a>
 		</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"

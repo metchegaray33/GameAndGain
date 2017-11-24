@@ -3,16 +3,20 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
-<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-<link href="../../assets/css/beneficiary.css" rel="stylesheet" />
-<link rel="stylesheet" href="../../assets/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
+	<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="../../assets/css/beneficiary.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../assets/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="navbar">
-		
+		<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
+		</div>
 		<div class="logo_header">
-			<section class="logo_title"></section>
+			<a href="#">
+				<img src="../../assets/img/logo.png" class="logo_title"> 
+			</a>
 		</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -31,6 +35,7 @@
 			<div class="dropdown">
 				  <div id="myDropdown" class="dropdown-content">
 				    <a href="#home">Agregar una Obra</a>
+				    <a href="../../.">Cerrar Sesion</a>
 				  </div>
 			</div>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">

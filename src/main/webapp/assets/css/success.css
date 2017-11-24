@@ -38,13 +38,13 @@ body{
 }
 
 .logo_header{
+	height: 400px;
 	font-family: quickBold;
 	text-align: center;
 	padding-top: 10%;
 	padding-right: 50%;
 	color: white;
 	font-size: 100px;
-	height: 600px;
 	background-size: cover;
   	background-attachment: fixed;
   	margin: auto;
@@ -52,17 +52,19 @@ body{
   	background-size: 100%;
   	background-repeat: no-repeat;
   	z-index: -1;
-
 }
 
 .logo_title{
 	margin-top: -100px;
-	
 	height: 100%;
-	background-image: url(../img/logo.png);
-	background-repeat: no-repeat;
 	background-size: 100%;
 }
+
+.logo_title:focus, .logo_title:hover, logo_title:selected{
+	text-decoration: none;
+	border: none;
+}
+
 
 .menu_bar{
 	background-color: #ce5f5f;

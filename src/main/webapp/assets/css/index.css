@@ -43,6 +43,7 @@ body {
 /* HEADER */
 
 .logo_header{
+	height: 400px;
 	font-family: quickBold;
 	text-align: center;
 	padding-top: 10%;
@@ -60,10 +61,13 @@ body {
 
 .logo_title{
 	margin-top: -100px;
-	height: 55%;
-	background-image: url(../img/logo.png);
-	background-repeat: no-repeat;
+	height: 100%;
 	background-size: 100%;
+}
+
+.logo_title:focus, .logo_title:hover, logo_title:selected{
+	text-decoration: none;
+	border: none;
 }
 
 .active {

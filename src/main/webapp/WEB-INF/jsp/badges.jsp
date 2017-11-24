@@ -5,29 +5,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Administrar Insignia</title>
-
-<link href="../../assets/css/badges.css" rel="stylesheet" />
-
-
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
+	<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="../../assets/css/badges.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../assets/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<title>Administrar Insignia</title>
 </head>
 <body>
-
-
-<div class="navbar">
-
-		<div class="logo_header">
-			<section class="logo_title"></section>
+	<div class="navbar">
+		<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
 		</div>
-
+		<div class="logo_header">
+			<a href="#">
+				<img src="../../assets/img/logo.png" class="logo_title"> 
+			</a>
+		</div>
+		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
 		</div>
 		
@@ -35,10 +35,17 @@
 			<a class="menu_bar-link" href="#">INICIO</a>
 			<a class="menu_bar-link" href="./profile">MI PERFIL</a>
 			<a class="menu_bar-link" href="#">RANKINGS</a>
+			<a class="menu_bar-link" href="#" onclick="contentMenu()"><i class="fa fa-bars fa-inverse bars " aria-hidden="true"></i></a>
+			<div class="dropdown">
+				  <div id="myDropdown" class="dropdown-content">
+				    <a href="#">Administrar Insignias</a>
+				    <a href="../../.">Cerrar Sesion</a>
+				  </div>
+			</div>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 		</div>
-		
-	</div>	
+		<!-- /.nav-collapse -->
+	</div>
 	
 	<section class="badges-btns">
 		<table class="badges-btns--title">

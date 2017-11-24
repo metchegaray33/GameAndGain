@@ -32,12 +32,13 @@
 
 	<div class="navbar">
 	<div class="access_menu">
-			<a class="access_menu-link" href="./signup">Registrarse</a>
-			<a class="access_menu-link" href="./login">Iniciar Sesión</a>
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
 		</div>
 	<div class="logo_header">
-			<section class="logo_title"></section>
-		</div>
+				<a href="#">
+					<img src="../../assets/img/logo.png" class="logo_title"> 
+				</a>
+			</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">

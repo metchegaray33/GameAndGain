@@ -10,8 +10,13 @@
 </head>
 <body>
 	<div class="navbar">
+		<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
+		</div>
 		<div class="logo_header">
-			<section class="logo_title"></section>
+			<a href="#">
+				<img src="../../assets/img/logo.png" class="logo_title"> 
+			</a>
 		</div>
 		
 		<div class="navbar-header">
@@ -30,12 +35,15 @@
 			<div class="dropdown">
 				  <div id="myDropdown" class="dropdown-content">
 				    <a href="./badges">Administrar Insignias</a>
+				    <a href="../../.">Cerrar Sesion</a>
 				  </div>
 			</div>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 		</div>
 		<!-- /.nav-collapse -->
 	</div>
+	
+	
 	<section class="games_section">	
 			<table class="games_section-table">
 				<tr class="games_section-table-row">

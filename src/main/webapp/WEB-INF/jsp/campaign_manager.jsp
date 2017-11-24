@@ -11,9 +11,13 @@
 </head>
 <body>
 	<div class="navbar">
-		
+		<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
+		</div>
 		<div class="logo_header">
-			<section class="logo_title"></section>
+			<a href="#">
+				<img src="../../assets/img/logo.png" class="logo_title"> 
+			</a>
 		</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -34,6 +38,7 @@
 				    <a href="#home">Crear Campaña</a>
 				    <a href="#about">Editar Campaña</a>
 				    <a href="#about">Invitar a Participar</a>
+				    <a href="./badges">Cerrar Sesion</a>
 				  </div>
 			</div>
 				<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
