@@ -17,13 +17,14 @@
 			<!--  <a class="access_menu-link" href="webapi/adminResource/badges">Administrar Insignias</a> -->
 		</div>
 		<div class="logo_header">
-			<section class="logo_title"></section>
+			<div class="logo_title"></div> 
 		</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
 			</button>
 		</div>
 		<div class="menu_bar">

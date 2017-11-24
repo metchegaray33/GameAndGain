@@ -146,6 +146,7 @@
 				  <option value="2">Donante</option>
 				  <option value="3">Beneficiario</option>
 				  <option value="4" >Gestor de Campañas</option>
+				  <option value="5" >Administrador</option>
 				</select>
 									
 			<div class="signup_section-form-btns">

@@ -85,7 +85,7 @@ body{
 	text-align: center;
 	text-decoration: none;
 	background-color: #ce5f5f;
-	
+	text-decoration: none;
 }
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
@@ -98,6 +98,12 @@ body{
 	color: white;
 	text-decoration: none;
 }
+
+.menu_bar-link:visited{
+	color: white;
+	text-decoration:none;
+}
+
 
 
 .search{

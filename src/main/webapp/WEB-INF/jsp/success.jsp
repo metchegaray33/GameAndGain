@@ -82,12 +82,11 @@
 				
 			</table>
 			
+			<div class="play-btn">Juega Ahora!</div>
 			
 	</section>
 	
-	<section>
-		<div class="play-btn">Juega Ahora!</div>
-	</section>
+	
 	<section class="collaborators_section">	
 			<table class="collaborators_section-table">
 				<th class="collaborators_section-table-header">COLABORADORES</th>

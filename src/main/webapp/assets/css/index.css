@@ -85,13 +85,22 @@ body {
 	text-align: center;
 	text-decoration: none;
 	background-color: #aa4d4d;
-	
+	text-decoration: none;
 }
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 	color: white;
 	text-decoration: none;
 }
+.menu_bar-link:focus{
+	color: white;
+	text-decoration:none;
+}
+.menu_bar-link:visited{
+	color: white;
+	text-decoration:none;
+}
+
 
 .search{
 	width: 200px;
