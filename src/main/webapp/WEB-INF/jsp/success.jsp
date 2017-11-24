@@ -82,7 +82,7 @@
 				
 			</table>
 			
-			<div class="play-btn">Juega Ahora!</div>
+			<div class="play-btn">JUEGA AHORA!</div>
 			
 	</section>
 	

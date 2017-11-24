@@ -1,3 +1,4 @@
+/* FONTS */
 @CHARSET "ISO-8859-1";
 
 @font-face{
@@ -21,363 +22,193 @@
 }
 
 @font-face{
-
 	font-family: caveatRegular;
-
 	src: url("fonts/CaveatBrush-Regular.ttf");
-
 }
-
-
 
 @font-face{
-
 	font-family: patrickRegular;
-
 	src: url("fonts/PatrickHand-Regular.ttf");
-
 }
 
-
+/* BODY */
 
 body {
-
 	height: 100%;
-
 	margin: 0;
-
 	background: url(../img/bg.jpg);
-
 	display: compact;
+}
 
-}.logo_header{
+/* HEADER */
 
+.logo_header{
 	font-family: quickBold;
-
 	text-align: center;
-
 	padding-top: 10%;
-
 	padding-right: 50%;
-
 	color: white;
-
 	font-size: 100px;
-
 	background-size: cover;
-
   	background-attachment: fixed;
-
   	margin: auto;
-
   	background-image: url(../img/3.jpg);
-
   	background-size: 100%;
-
   	background-repeat: no-repeat;
-
   	z-index: -1;
-
-
-
 }
 
 .logo_title{
-
 	margin-top: -100px;
-
 	height: 500px;
-
 	background-image: url(../img/logo.png);
-
 	background-repeat: no-repeat;
-
 	background-size: 100%;
-
 }
 
 .active {
-
 	background-color: #aa4d4d;
-
 	color: white;
-
 }
 
 .menu_bar{
-
 	background-color: #ce5f5f;
-
 	height: 65px;
-
 	width: 100%;
-
 	display: flex;
-
-
-
 }
 
 .menu_bar-link ~ .menu_bar-link{
-
 	background-color: #ce5f5f;
-
 }
 
 .menu_bar-link{
-
 	font-family: quickMedium;
-
 	flex-grow: 1;
-
 	color: white;
-
 	padding-left: 50px;
-
 	padding-right: 50px;
-
 	padding-top: 5px;
-
 	font-size: 40px;
-
 	text-align: center;
-
 	text-decoration: none;
-
 	background-color: #aa4d4d;
-
-	
-
 }
 
 .menu_bar-link:hover{
-
 	background-color: #aa4d4d;
-
 	color: white;
-
 	text-decoration: none;
-
 }
-
-
 
 .search{
-
 	width: 200px;
-
 	border: none;
-
 	background-image: url(../img/searchicon.png);
-
 	background-size: 40px;
-
     background-position: -5px 10px; 
-
     background-repeat: no-repeat;
-
     padding: 0px 20px 12px 40px;
-
     background-color: #ce5f5f;
-
     -webkit-transition: width 0.4s ease-in-out;
-
     transition: width 0.4s ease-in-out;
-
     font-size: 30px;
-
 }
-
-
 
 .search:focus {
-
     width: 300px;
-
-   
-
 }
 
-
-
 .search::placeholder{
-
 	color: lightgray;
-
 	opacity: 0.5;
-
 	font-size: 30px;
-
-
-
 }
 
 .search:hover{
-
-
-
 	background-color: #ce5f5f;
-
 }
 
 .access_menu{
-
 	background-color: white;
-
 	height: 50px;
-
 	width: 100%;
-
 	display: flex;
-
-	
-
 	justify-content: flex-end;
-
-	
-
-
-
 }
 
-
-
 .access_menu-link{
-
 	font-family: quickMedium;
-
-	
-
 	color: #ce5f5f;
-
 	padding-left: 50px;
-
 	padding-right: 50px;
-
 	padding-top: 5px;
-
 	font-size: 30px;
-
 	text-align: center;
-
 	text-decoration: none;
-
-	
-
-	
-
 }
 
 .access_menu-link:hover{
-
-	
-
 	color: #aa4d4d;
-
 	text-decoration: none;
-
 }
 
-
+/* BUTTONS */
 
 .buttons-div{
-
 	padding-top: 5%;
-
 	padding-left: 40%;
-
 	display: flex;
-
 	flex-direction: column;
-
 	width: 400px;
-
 }
-
-
 
 .buttons{
 	flex-direction: column;
 	min-width: 400px;
 	background-color: #ce5f5f;
-
 	font-family: quickMedium;
-
 	font-size: 30px;
-
 	text-align: center;
-
 	text-decoration: none;
-
 	color:white;
-
     border-radius:6px;
-
     border-bottom: none;
-
     border-right: none;
-
     box-shadow: 5px 9px 0px #aa4d4d;
-
     margin-top: 10px;
-
-	
-
 }
 
-
+/* BADGE'S FORM */
 
 .badges-form{
-	
 	margin-top:10px;
-
 	background-color: #f0efe7;
-
 	display: none;
-
 	flex-direction: column;
-
 	align-items: center;
 	height: 250px;
-
 }
 
-
-
 .form-inputs{
-
 	background-color: #f0efe7;
-
 	border-bottom-color: gray;
-
 	border-top: none;
-
 	border-right: none;
-
 	border-left:  none;
-	
-
 	color: gray;
-
 	height: 30px;
 	font-family:quickRegular;
-
 	width: 255px;
-
 	font-size: 23px;
-
 	padding-bottom: 0px;
-
 	text-decoration: none;
-
 	margin-top: 5px;
-
 	text-align: center;
-
 }
 
 .badges-table{
-	display: block ;
+	display: block;
 }
 
 .badges-table{
@@ -392,6 +223,7 @@ body {
 }
 
 /*BADGES BUTTONS*/
+
 .badges-btns{
 	border-radius: 6px;
 	background-color: #f0efe7;
@@ -419,7 +251,6 @@ body {
 #badgesTable-delete{
 	display: none;
 }
-
 
 .badge-btns--btn{
 	width: 50%;
@@ -484,21 +315,19 @@ body {
 
 /*BADGE TABLE*/
 .table{
-font-family: quickMedium, 'Helvetica Neue', Helvetica, Arial;
-  font-size: 20px;
-  line-height: 25px;
-  color: #3b3b3b;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  background: #2b2b2b;
-  margin: auto;
-  margin-top:20px;
-  margin-bottom:10px;
-width: 70%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  display: table;
- /*  @media screen and (max-width: 580px); */
-  
+	font-family: quickMedium, 'Helvetica Neue', Helvetica, Arial;
+	font-size: 20px;
+	line-height: 25px;
+	color: #3b3b3b;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	background: #2b2b2b;
+	margin: auto;
+	margin-top:20px;
+	margin-bottom:10px;
+	width: 70%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	display: table;
 }
 
 .row{
@@ -507,31 +336,20 @@ width: 70%;
     background: #e9e9e9;
     font-weight: 900;
     color: #ffffff;
-   
-  /*@media screen and (max-width: 580px);
-    padding: 8px 0
-    display: block*/
 }
 
 .row:nth-of-type(odd){
 	background: #f6f6f6;
 }
+
 .row.header{
 	background: #ce5f5f;
 }
 
-  
-
 .cell{
-	  padding: 6px 12px;
+	padding: 6px 12px;
   	display: table-cell;
- /*  @media screen and (max-width: 580px)
-    padding: 2px 12px
-    display: block */
-	
 }
-
-
 
 /*FOOTER*/
 
@@ -543,9 +361,9 @@ width: 70%;
     z-index: 10;
     height: 300px;
     margin-bottom: -10px;
-     border-radius: 100% 50%;
-     display: flex;
-     flex-direction:row;
+    border-radius: 100% 50%;
+    display: flex;
+    flex-direction:row;
 }
 
 .footer-img{
@@ -555,6 +373,7 @@ width: 70%;
 	height: 130px;
 	width:145px;
 }
+
 .footer-paragraph{
 	padding-left: 145px;
 	position: absolute;
@@ -562,6 +381,7 @@ width: 70%;
 	padding-top: 215px;
 	font-family: quickRegular;
 }
+
 .footer-div{
 	position: relative;
 	margin-left: 100px;
@@ -569,10 +389,8 @@ width: 70%;
 	margin-top: 80px;
 	display: flex;
 	height: 180px;
-	border-left:   solid #92afef;
-	
+	border-left: solid #92afef;
 }
-
 
 .footer-table-about-header, .footer-table-social-header{
 	font-family: quickBold;
@@ -584,11 +402,12 @@ width: 70%;
 	text-align: left;
 }
 
+/* FOOTER LINKS */
+
 .social-links{
 	text-decoration: none;
 	margin-right: 10px;
 }
-
 
 .footers-titles-links{
 	font-family: quickRegular;

@@ -1,3 +1,5 @@
+/* FONTS */
+
 @font-face{
 	font-family: quickBold;
 	src: url("fonts/Quicksand-Bold.ttf");
@@ -28,12 +30,14 @@
 	src: url("fonts/PatrickHand-Regular.ttf");
 }
 
-
+/* BODY */
 
 body{
 	background-image: url(../img/bg.jpg);
 	height: 100%;
 }
+
+/* HEADER */
 
 .logo_header{
 	font-family: quickBold;
@@ -50,12 +54,10 @@ body{
   	background-size: 100%;
   	background-repeat: no-repeat;
   	z-index: -1;
-
 }
 
 .logo_title{
 	margin-top: -100px;
-	
 	height: 100%;
 	background-image: url(../img/logo.png);
 	background-repeat: no-repeat;
@@ -87,6 +89,7 @@ body{
 	background-color: #ce5f5f;	
 	text-decoration: none;
 }
+
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 	color: white;
@@ -103,8 +106,6 @@ body{
 	color: white;
 	text-decoration:none;
 }
-
-
 
 .search{
 	width: 50px;
@@ -123,13 +124,13 @@ body{
     width: 300px;
     background-color: #aa4d4d;
 }
+
 .search::placeholder{
 	color: lightgray;
 	opacity: 0.5;
 	font-size: 30px;
-
-
 }
+
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 }
@@ -139,11 +140,9 @@ body{
 	height: 50px;
 	width: 100%;
 	display: flex;
-	
 	justify-content: flex-end;
-	
-
 }
+
 .access_menu-link{
 	font-family: quickMedium;
 	color: #ce5f5f;
@@ -153,14 +152,14 @@ body{
 	font-size: 30px;
 	text-align: center;
 	text-decoration: none;
-	
-	
 }
+
 .access_menu-link:hover{
 	color: #aa4d4d;
 	text-decoration: none;
 }
 
+/* POP-UP DIV FOR WARNING - MAIN DIV */
 
 .main_div{
 	padding-botton: 40px;
@@ -185,6 +184,7 @@ body{
     box-shadow: 0px 10px 0px #d8d47c;
     border-radius:6px;
 }
+
 .main_div-table-header{
 	background-color: #ce5f5f;
     color: white;
@@ -197,9 +197,7 @@ body{
     box-shadow: 0px 10px 0px #aa4d4d;
     border-radius:6px;
     bottom: 50px;
-	
 }
-
 
 .main_div-form{
 	margin-top: 10px;
@@ -213,7 +211,6 @@ body{
 	font-family: quickRegular;
 	font-size: 25px;
 	color: gray;
-	
 	margin-top: 50px;
 }
 
@@ -238,14 +235,12 @@ body{
 }
 
 .main_div-message{
-	
 	width: 100%;
 	margin-top: 60px;
 	text-align:center;
 	color: #55aaff;
 	font-family: quickBold;
-	font-size: 28px;
-	
+	font-size: 28px;	
 }
 
 .main_div-btn{
@@ -270,11 +265,14 @@ body{
 	text-decoration: none;
 	color: white;
 }
+
 .login-btn:hover {
 	color: white;
 	background-color: #d8d47c;
 	text-decoration: none;
 }
+
+/* FOOTER */
 
 .footer{
 	background-color: white;
@@ -284,9 +282,9 @@ body{
     z-index: 10;
     height: 300px;
     margin-bottom: -10px;
-     border-radius: 100% 50%;
-     display: flex;
-     flex-direction:row;
+    border-radius: 100% 50%;
+    display: flex;
+    flex-direction:row;
 }
 
 .form-btns p{
@@ -298,7 +296,6 @@ body{
 	width: 400px;
 }
 
-
 .form-btns--a, .form-btns--a a{
 	width: 250px;
 	height: 100px;
@@ -309,6 +306,7 @@ body{
 	font-size: 20px;
 	text-decoration: none;
 }
+
 .footer-img{
 	display: block;
 	padding-left: 180px;
@@ -316,6 +314,7 @@ body{
 	height: 200px;
 	width:290px;
 }
+
 .footer-paragraph{
 	padding-left: 145px;
 	position: absolute;
@@ -323,6 +322,7 @@ body{
 	padding-top: 215px;
 	font-family: quickRegular;
 }
+
 .footer-div{
 	position: relative;
 	margin-left: 100px;
@@ -331,9 +331,7 @@ body{
 	display: flex;
 	height: 180px;
 	border-left:   solid #92afef;
-	
 }
-
 
 .footer-table-about-header, .footer-table-social-header{
 	font-family: quickBold;
@@ -345,15 +343,15 @@ body{
 	text-align: left;
 }
 
+/* FOOTER LINKS */
+
 .social-links{
 	text-decoration: none;
 	margin-right: 10px;
 }
 
-
 .footers-titles-links{
 	font-family: quickRegular;
 	color: #cbc876;
 	text-decoration: none;
-
 }

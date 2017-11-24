@@ -133,16 +133,32 @@ body{
 	color: white;
 	height: 90px;
 	font-size: 50px;
-	padding: 20px;
+	padding: 10px;
 	text-align:center;
 	float: right;
 	background-color: #55aaff;
 	font-family: quickMedium;
-	margin-top: 20%;
+	margin-top: 200px;
 	margin-right: 10%;
 	border-radius: 60px;
 	display: relative; 
 	box-shadow: 0px 10px 0px #518ae8;
+	text-decoration: none;
+}
+
+.play-btn:focus{
+	color: white;
+	background-color: #55aaff;
+	box-shadow: 0px 10px 0px #518ae8;
+	text-decoration: none;
+}
+
+.play-btn:hover{
+	color: white;
+	margin-top: 205px;
+	background-color: #4c9ae8;
+	box-shadow: 0px 5px 0px #518ae8;
+	text-decoration: none;
 }
 
 

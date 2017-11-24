@@ -61,13 +61,7 @@ public class AdminResource implements AdminResourceInterface {
 	@Autowired
 	private AdminService adminService; //reemplazar por el tag que se encuentra en AdminServiceImple : @Service("adminService")
 	
-	@GET
-	@Path("signup")
-	@Produces(MediaType.TEXT_HTML)
-	public Response signup() {
-		return Response.ok(new Viewable("/signup")).build();
-	}
-	
+	//GET PAGE WHEN NOT LOGGED IN ERROR
 	@GET
 	@Path("not_logged_in")
 	@Produces(MediaType.TEXT_HTML)
@@ -75,6 +69,15 @@ public class AdminResource implements AdminResourceInterface {
 		return Response.ok(new Viewable("/notLoggedIn")).build();
 	}
 
+	//GET SIGNUP
+	@GET
+	@Path("signup")
+	@Produces(MediaType.TEXT_HTML)
+	public Response signup() {
+		return Response.ok(new Viewable("/signup")).build();
+	}
+	
+	//POST SIGNUP
 	@POST
 	@Path("signup")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -120,7 +123,8 @@ public class AdminResource implements AdminResourceInterface {
 			return Response.ok().entity(new Viewable("/login")).build();
 		}
 	}
-
+	
+	//GET LOGIN
 	@GET
 	@Path("login")
 	@Produces(MediaType.TEXT_HTML)
@@ -128,6 +132,7 @@ public class AdminResource implements AdminResourceInterface {
 		return Response.ok(new Viewable("/login")).build();
 	}
 
+	//POST LOGIN
 	@POST
 	@Path("login")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -160,6 +165,7 @@ public class AdminResource implements AdminResourceInterface {
 			}
 	}
 	
+	//GET COMMENT (TEMPORAL, BLUE TEAM)
 	@GET
 	@Path("temporalComment")
 	@Produces(MediaType.TEXT_HTML)
@@ -167,6 +173,7 @@ public class AdminResource implements AdminResourceInterface {
 		return Response.ok(new Viewable("/TemporalComment")).build();
 	}
 	
+	//POST COMMENT (TEMPORAL, BLUE TEAM)
 	@POST
 	@Path("temporalComment")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -192,64 +199,11 @@ public class AdminResource implements AdminResourceInterface {
 		newComment.setDate(new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy").parse(date).getTime()));
 		newComment.setComment(comment);
 		
-		
 		adminService.saveComment(newComment);
 		return Response.ok().entity(new Viewable("/success")).build();
 	}
-	
-	@GET
-	@Path("badges")
-	@Produces(MediaType.TEXT_HTML)
-	public Response badges() {
-		return Response.ok(new Viewable("/badges")).build();
-	}
-	
-	@POST
-	@Path("createBadge")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_HTML)
-	public Response createBadge(
-			@FormParam("badgeName") String badgeName,
-			@FormParam("badgeValue") String badgeValue)
-			throws ParseException {
-				if (badgeName == null) {
-					return Response.status(Status.PRECONDITION_FAILED).build();
-				}
-		
-				Badge newBadge = new Badge();
-				newBadge.setName(badgeName);
-				newBadge.setValue(Integer.parseInt(badgeValue));
-								
-				adminService.saveBadge(newBadge);
-				return Response.ok().entity(new Viewable("/success")).build();
-	}	
-	
-	@RequestMapping(value="#")
-    public ModelAndView viewBadges(Model model) {
-        Map<String, List<Badge>> badge =
-                new HashMap<String, List<Badge>>();
-       
-        badge.put("badge", adminService.showBadges());
-        System.out.println(new ModelAndView("badgeList", badge));
-        return new ModelAndView("badgeList", badge);
-        
-    }
-	
-	@GET
-	@Path("showBadges")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_HTML)
-	public Response showBadges(){
-		List<Badge> badges = adminService.showBadges();
-		for(int i = 0; i < badges.size(); i++) {
-			System.out.println(badges.get(i).getBadgeId());
-            System.out.println(badges.get(i).getName());
-            System.out.println(badges.get(i).getValue()); 
-        }
-		//badges.addAttribute("badgeName", badges.get(0).getName());
-		return null;
-	}
 
+	//PROFILE VIEWABLE
 	@GET
 	@Path("profile")
 	@Produces(MediaType.TEXT_HTML)
@@ -257,6 +211,7 @@ public class AdminResource implements AdminResourceInterface {
 		return Response.ok(new Viewable("/profile")).build();
 	}
 	
+	//GET PROFILE INFORMATION
 	@POST
 	@Path("getProfile")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -284,6 +239,7 @@ public class AdminResource implements AdminResourceInterface {
 				return Response.ok().entity(new Viewable("/success")).build();
 	}
 	
+	//UPDATE PROFILE
 	@POST
 	@Path("updateProfile")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -376,8 +332,32 @@ public class AdminResource implements AdminResourceInterface {
 				
 				adminService.save(updatedUser);
 				return Response.ok().entity(new Viewable("/success")).build();
-			}
+	}
 	
+	//GET BADGES VIEWABLE
+		@GET
+		@Path("badges")
+		@Produces(MediaType.TEXT_HTML)
+		public Response badges() {
+			return Response.ok(new Viewable("/badges")).build();
+		}
+	
+	//SHOW BADGES - GETS ALL BADGES INFORMATION
+	@GET
+	@Path("showBadges")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	public Response showBadges(){
+		List<Badge> badges = adminService.showBadges();
+		for(int i = 0; i < badges.size(); i++) {
+			System.out.println(badges.get(i).getBadgeId());
+            System.out.println(badges.get(i).getName());
+            System.out.println(badges.get(i).getValue()); 
+        }
+		return null;
+	}
+	
+	//UPDATE BADGE
 	@POST
 	@Path("updateBadge")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -401,6 +381,39 @@ public class AdminResource implements AdminResourceInterface {
 				return Response.ok().entity(new Viewable("/success")).build();
 	}	
 	
+	//CREATE BADGE
+		@POST
+		@Path("createBadge")
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		@Produces(MediaType.TEXT_HTML)
+		public Response createBadge(
+				@FormParam("badgeName") String badgeName,
+				@FormParam("badgeValue") String badgeValue)
+				throws ParseException {
+					if (badgeName == null) {
+						return Response.status(Status.PRECONDITION_FAILED).build();
+					}
+			
+					Badge newBadge = new Badge();
+					newBadge.setName(badgeName);
+					newBadge.setValue(Integer.parseInt(badgeValue));
+									
+					adminService.saveBadge(newBadge);
+					return Response.ok().entity(new Viewable("/success")).build();
+		}	
+		
+		@RequestMapping(value="#")
+	    public ModelAndView viewBadges(Model model) {
+	        Map<String, List<Badge>> badge =
+	                new HashMap<String, List<Badge>>();
+	       
+	        badge.put("badge", adminService.showBadges());
+	        System.out.println(new ModelAndView("badgeList", badge));
+	        return new ModelAndView("badgeList", badge);
+	        
+	    }
+	
+	//DELETE BADGE
 	@POST
 	@Path("deleteBadge")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)

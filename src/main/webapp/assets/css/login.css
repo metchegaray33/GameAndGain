@@ -1,4 +1,4 @@
-
+/* FONTS */
 
 @font-face{
 	font-family: quickBold;
@@ -30,7 +30,7 @@
 	src: url("fonts/PatrickHand-Regular.ttf");
 }
 
-
+/* BODY */
 
 body{
 	background-image: url(../img/bg.jpg);
@@ -52,12 +52,10 @@ body{
   	background-size: 100%;
   	background-repeat: no-repeat;
   	z-index: -1;
-
 }
 
 .logo_title{
 	margin-top: -100px;
-	
 	height: 100%;
 	background-image: url(../img/logo.png);
 	background-repeat: no-repeat;
@@ -69,10 +67,7 @@ body{
 	height: 65px;
 	width: 100%;
 	display: flex;
-
-
 }
-
 
 .menu_bar-link{
 	font-family: quickMedium;
@@ -87,6 +82,7 @@ body{
 	background-color:  #ce5f5f;
 	text-decoration:none;
 }
+
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 	color: white;
@@ -103,8 +99,6 @@ body{
 	color: white;
 	text-decoration:none;
 }
-
-
 
 .search{
 	width: 50px;
@@ -123,16 +117,42 @@ body{
     width: 300px;
     background-color: #aa4d4d;
 }
+
 .search::placeholder{
 	color: lightgray;
 	opacity: 0.5;
 	font-size: 30px;
-
-
 }
+
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 }
+
+.access_menu{
+	background-color: white;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.access_menu-link{
+	font-family: quickMedium;
+	color: #ce5f5f;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 5px;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.access_menu-link:hover, .access_menu-link:focus{
+	color: #aa4d4d;
+	text-decoration: none;
+}
+
+/* LOGIN SECTION */
 
 .login_section{
 	margin-top: 150px;
@@ -145,7 +165,6 @@ body{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 350px;
-
 }
 
 .login_section-table-header{
@@ -156,14 +175,10 @@ body{
     font-size: 35px;
     text-align: center;
     font-family: quickMedium; 
-     box-shadow: 0px 10px 0px #d8d47c;
+    box-shadow: 0px 10px 0px #d8d47c;
     border-radius:6px;
- 
     bottom: 50px;
-
-
 }
-
 
 .login_section-table{
 	background-color: #f1ed8c;
@@ -173,16 +188,15 @@ body{
     font-size: 35px;
     text-align: center;
     font-family: quickMedium; 
-     box-shadow: 0px 10px 0px #d8d47c;
+    box-shadow: 0px 10px 0px #d8d47c;
     border-radius:6px;
- 
     bottom: 50px;
-
-
 }
+
+/* LOGIN FORM */
+
 .login_section-form{
 	margin-top: 50px;
-	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -193,8 +207,6 @@ body{
 	font-size: 25px;
 	color: gray;
 	margin-top: 10px;
-
-
 }
 .login_section-form-inputs{
 	background-color: #f0efe7;
@@ -215,7 +227,6 @@ body{
 .signup_section-form-inputs:focus{
 	outline:none;
 	text-align: center;
-
 }
 
 .signup_section-form-inputs::placeholder{
@@ -228,47 +239,16 @@ body{
 
 .signup_section-form-option{
 	-webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   border:none;
-   text-align: center;
-   outline:none;
-
-   background-color: #f0efe7;
-   margin-top: 6px;
-   color: gray;
-   font-size: 23px;
-
-}
-
-
-.access_menu{
-	background-color: white;
-	height: 50px;
-	width: 100%;
-	display: flex;
-	
-	justify-content: flex-end;
-	
-
-}
-.access_menu-link{
-	font-family: quickMedium;
-	color: #ce5f5f;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 5px;
-	font-size: 30px;
+	-moz-appearance: none;
+	appearance: none;
+	border:none;
 	text-align: center;
-	text-decoration: none;
-	
-	
+	outline:none;
+	background-color: #f0efe7;
+	margin-top: 6px;
+	color: gray;
+	font-size: 23px;
 }
-.access_menu-link:hover, .access_menu-link:focus{
-	color: #aa4d4d;
-	text-decoration: none;
-}
-
 
 .login_section-form-btns{
 	margin-top: 50px;
@@ -280,6 +260,7 @@ body{
 	font-size: 20px;
 	font-family: quickMedium;
 }
+
 .btn-login {
 	width: 150px;
 	background-color: #55aaff;
@@ -287,11 +268,14 @@ body{
 	font-size: 20px;
 	font-family: quickMedium;
 }
+
 .btn-login:hover, .btn-login:focus{
 	background-color: #44bbff;
 	text-decoration: none;
 	color: white;
 }
+
+/* FOOTER */
 
 .footer{
 	background-color: white;
@@ -301,9 +285,9 @@ body{
     z-index: 10;
     height: 300px;
     margin-bottom: -10px;
-     border-radius: 100% 50%;
-     display: flex;
-     flex-direction:row;
+    border-radius: 100% 50%;
+    display: flex;
+    flex-direction:row;
 }
 
 .footer-img{
@@ -313,6 +297,7 @@ body{
 	height: 200px;
 	width:290px;
 }
+
 .footer-paragraph{
 	padding-left: 145px;
 	position: absolute;
@@ -320,6 +305,7 @@ body{
 	padding-top: 215px;
 	font-family: quickRegular;
 }
+
 .footer-div{
 	position: relative;
 	margin-left: 100px;
@@ -327,10 +313,8 @@ body{
 	margin-top: 80px;
 	display: flex;
 	height: 180px;
-	border-left:   solid #92afef;
-	
+	border-left: solid #92afef;	
 }
-
 
 .footer-table-about-header, .footer-table-social-header{
 	font-family: quickBold;
@@ -342,15 +326,15 @@ body{
 	text-align: left;
 }
 
+/* FOOTER LINKS */
+
 .social-links{
 	text-decoration: none;
 	margin-right: 10px;
 }
 
-
 .footers-titles-links{
 	font-family: quickRegular;
 	color: #cbc876;
 	text-decoration: none;
-
 }

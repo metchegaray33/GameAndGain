@@ -1,3 +1,4 @@
+/* FONTS */
 @CHARSET "ISO-8859-1";
 @CHARSET "ISO-8859-1";
 @font-face{
@@ -30,12 +31,17 @@
 	src: url("fonts/PatrickHand-Regular.ttf");
 }
 
+/* BODY */
+
 body {
 	height: 100%;
 	margin: 0;
 	background: url(../img/bg.jpg);
 	display: compact;
 }
+
+/* HEADER */
+
 .logo_header{
 	font-family: quickBold;
 	text-align: center;
@@ -50,8 +56,8 @@ body {
   	background-size: 100%;
   	background-repeat: no-repeat;
   	z-index: -1;
-
 }
+
 .logo_title{
 	margin-top: -100px;
 	height: 55%;
@@ -59,20 +65,23 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+
 .active {
 	background-color: #aa4d4d;
 	color: white;
 }
+
 .menu_bar{
 	background-color: #ce5f5f;
 	height: 65px;
 	width: 100%;
 	display: flex;
-
 }
+
 .menu_bar-link ~ .menu_bar-link{
 	background-color: #ce5f5f;
 }
+
 .menu_bar-link{
 	font-family: quickMedium;
 	flex-grow: 1;
@@ -86,15 +95,18 @@ body {
 	background-color: #aa4d4d;
 	text-decoration: none;
 }
+
 .menu_bar-link:hover{
 	background-color: #aa4d4d;
 	color: white;
 	text-decoration: none;
 }
+
 .menu_bar-link:focus{
 	color: white;
 	text-decoration:none;
 }
+
 .menu_bar-link:visited{
 	color: white;
 	text-decoration:none;
@@ -117,20 +129,18 @@ body {
     width: 300px;
     background-color: #aa4d4d;
 }
+
 .search::placeholder{
 	color: lightgray;
 	opacity: 0.5;
 	font-size: 30px;
-
-
 }
-
-
 
 .bars{
 	margin-top: 8px;
 
 }
+
 .dropdown {
   	height: 100px;
     display: block;
@@ -147,16 +157,15 @@ body {
   	align-content: center;
   	justify-content: center;
    	height: 105px;
-
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+
 .dropdown a{
 	display: flex;
 	font-size: 25px;
 	text-align: center;
-	 flex-grow: 5;
-
+	flex-grow: 5;
 	font-family: quickMedium;
 	color: #ce5f5f;
 }
@@ -166,21 +175,16 @@ body {
 	background-color: #f0efe7;
 }
 
-
-
 .access_menu{
 	background-color: white;
 	height: 50px;
 	width: 100%;
 	display: flex;
-	
 	justify-content: flex-end;
-	
-
 }
+
 .access_menu-link{
 	font-family: quickMedium;
-	
 	color: #ce5f5f;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -188,15 +192,14 @@ body {
 	font-size: 30px;
 	text-align: center;
 	text-decoration: none;
-	
-	
 }
+
 .access_menu-link:hover{
-	
 	color: #aa4d4d;
 	text-decoration: none;
 }
 
+/* GAMES SECTION */
 
 .games_section{
 	margin-top: 100px;
@@ -212,13 +215,12 @@ body {
 	background-position: center;
 	background-size: 350px;
 	position: absolute;
-	
 }
+
 .games_section-table{
 	border-collapse: collapse;
     width: 100%;
     border: none;
-	
 }
 
 .games_section-table-header {
@@ -234,20 +236,23 @@ body {
 }
 
 .games_section-table-header ~ .games_section-table-header{
-		background-color: #92afef;
-		box-shadow: 0px 10px 0px #7992c9;
+	background-color: #92afef;
+	box-shadow: 0px 10px 0px #7992c9;
 }
+
 .games_section-table-header ~ .games_section-table-header:hover{
-		background-color: #7992c9;
+	background-color: #7992c9;
 }
+
 .games_section-table-header:hover{
 	background-color: #d8d47c;
 }
 
 .games_section-table-col, .games_section-table-header {
-   
     padding: 8px;
 }
+
+/* COLLABORATORS SECTION */
 
 .collaborators_section{
 	margin-top: 650px;
@@ -268,7 +273,6 @@ body {
 	border-collapse: collapse;
     width: 100%;
     border: none;
-	
 }
 
 .collaborators_section-table-header {
@@ -282,15 +286,14 @@ body {
     box-shadow: 0px 10px 0px #aa4d4d;
     bottom: 50px;
 }
+
 .collaborators_section-table-header:hover{
 	background-color: #aa4d4d;
 }
 
 .collaborators_section-table-col, .collaborators_section-table-header {
-   
     padding: 8px;
 }
-
 
 #slideshow, #slideshow-bene { 
     margin-top: 10px; 
@@ -298,9 +301,7 @@ body {
     position: relative; 
     width: 80%;
     height: 80%;
-
 }
-
 
 #slideshow > div { 
     position: absolute; 
@@ -308,7 +309,6 @@ body {
     left: 20px; 
     right: 0px; 
     bottom: 10px; 
-    
 }
 
 #slideshow-bene > div {
@@ -325,22 +325,23 @@ body {
 	border: 10px solid white;
 	outline: 1px solid gray;
     outline-offset: -10px;
-
 	box-shadow: 10px 10px 0px lightgray; 
-
 }
+
 .paper{
 	width: 100px;
 	position: relative;
 	margin-top: 190px;
 	margin-left: 100px;
 }
+
 .paper-2{
 	width: 100px;
 	position: relative;
 	margin-top: -17px;
 	margin-left: 0px;
 }
+
 .paper-text{
 	position: absolute;
 	font-size: 20px;
@@ -351,6 +352,7 @@ body {
 	top: 50px;
 	text-align: center;
 }
+
 .paper-text-2{
 	position: absolute;
 	font-size: 20px;
@@ -368,14 +370,13 @@ body {
 	margin-left: 350px;
 	height: 135px;
 	width: 135px;
-
 	background-image: url(../img/arrow.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100px;
-	
 }
 
+/* FOOTER */
 
 .footer{
 	background-color: white;
@@ -385,9 +386,9 @@ body {
     z-index: 10;
     height: 300px;
     margin-bottom: -10px;
-     border-radius: 100% 50%;
-     display: flex;
-     flex-direction:row;
+    border-radius: 100% 50%;
+    display: flex;
+    flex-direction:row;
 }
 
 .footer-img{
@@ -396,8 +397,8 @@ body {
 	padding-top: 100px;
 	height: 200px;
 	width:290px;
-	
 }
+
 .footer-paragraph{
 	padding-left: 145px;
 	position: absolute;
@@ -405,6 +406,7 @@ body {
 	padding-top: 215px;
 	font-family: quickRegular;
 }
+
 .footer-div{
 	position: relative;
 	margin-left: 100px;
@@ -412,10 +414,8 @@ body {
 	margin-top: 80px;
 	display: flex;
 	height: 180px;
-	border-left:   solid #92afef;
-	
+	border-left: solid #92afef;	
 }
-
 
 .footer-table-about-header, .footer-table-social-header{
 	font-family: quickBold;
@@ -427,15 +427,15 @@ body {
 	text-align: left;
 }
 
+/* FOOTER LINKS */
+
 .social-links{
 	text-decoration: none;
 	margin-right: 10px;
 }
 
-
 .footers-titles-links{
 	font-family: quickRegular;
 	color: #cbc876;
 	text-decoration: none;
-
 }
