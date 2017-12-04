@@ -1,18 +1,14 @@
 package com.github.openplay.model.impl;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
 
 import com.github.openplay.model.InterestInterface;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,15 +20,22 @@ import com.github.openplay.model.impl.Campaign;
 @XmlRootElement(name="interests")
 @Entity
 @Table(name="interests")
-public class Interest implements InterestInterface {
+public class Interest implements InterestInterface, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2794780953771180641L;
+
 	@Id
 	@GeneratedValue
-	private int interestId;
+	public int interestId;
 	
 	@NotEmpty
 	private String description;
 	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy = "campaignType")
+	private Set<Campaign> campaign = new HashSet<Campaign>(0);
 
 	public int getId(){
 		return interestId;
@@ -49,5 +52,13 @@ public class Interest implements InterestInterface {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public Set<Campaign> getCampaigns(){
+		return this.campaign;
+	 }
+	 
+	 public void setCampaign(Set<Campaign> campaign){
+		 this.campaign = campaign;
+	 }
 
 }

@@ -19,13 +19,13 @@ public class Answers implements AnswersInterface {
 	@Id
 	@GeneratedValue
 	@Column(name="answerId")
-	private int answerId;
+	public int answerId;
 	
 	@NotEmpty
 	@Size(min=4, max=40)
 	public String answer;
 
-	@NotEmpty
+	@NotNull
 	@Column(name="answer_Value", columnDefinition = "BIT", length = 1)
 	public boolean answer_value;
 	

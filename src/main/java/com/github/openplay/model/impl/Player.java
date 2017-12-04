@@ -19,10 +19,10 @@
 //import com.github.openplay.model.StudentInterface;
 //
 //@Component
-//@XmlRootElement(name="student")
+//@XmlRootElement(name="player")
 //@Entity
-//@Table(name="student")
-//public class Student implements StudentInterface {
+//@Table(name="player")
+//public class Player implements StudentInterface {
 //	
 //	@Id
 //	@GeneratedValue

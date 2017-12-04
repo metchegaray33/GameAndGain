@@ -32,7 +32,7 @@ public class Question implements QuestionsInterface {
 	public String question;
 	
 
-	@NotEmpty
+	@NotNull
 	public Integer score;
 
 
@@ -78,13 +78,13 @@ public class Question implements QuestionsInterface {
 	}
 
 	
-	public Set<Answers> getAnswers(){
-		return answer;
-	}
+//	public Set<Answers> getAnswers(){
+	//	return answer;
+//	}
 
-	public void setAnswer(Set<Answers> answer){
-		this.answer = answer;
-	}
+	//public void setAnswer(Set<Answers> answer){
+		//this.answer = answer;
+	//}
 
 
 }
