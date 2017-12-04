@@ -2,15 +2,26 @@ package com.github.openplay.service.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.jvnet.hk2.annotations.Service;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.github.openplay.model.impl.Campaign;
+import com.github.openplay.model.impl.Interest;
 import com.github.openplay.model.impl.Mission;
 import com.github.openplay.model.impl.Difficulties;
 import com.github.openplay.service.MissionService;
 
+//@Resource
+@Service
+@Transactional
+@Component
 public class MissionServiceImpl implements MissionService {
+	
 //	private static final Class<Interest> Interest = null;
 //	private static final Class<User> User = null;
 	@PersistenceContext
@@ -20,14 +31,16 @@ public class MissionServiceImpl implements MissionService {
 	public void createMission(Mission mission) {
 		// TODO Auto-generated method stub
 		Difficulties difficulty=entityManager.getReference(Difficulties.class, mission.difficulty.difficultyId);
-		Campaign campaign =entityManager.getReference(Campaign.class, mission.campaign.campaignsId);
-		Mission MissionAdded = new Mission();
-		MissionAdded.setDifficulty(difficulty);
-		MissionAdded.setCampaign(campaign);
-		MissionAdded.setScore(mission.score);
-		MissionAdded.setName(mission.name);
-		MissionAdded.setDescription(mission.description);
-		entityManager.persist(MissionAdded);
+		Campaign campaign = entityManager.getReference(Campaign.class, mission.campaign.campaignsId);
+		Interest interest = entityManager.getReference(Interest.class, mission.interest.interestId);
+		Mission missionAdded = new Mission();
+		missionAdded.setDifficulty(difficulty);
+		missionAdded.setCampaign(campaign);
+		missionAdded.setInterest(interest);
+		missionAdded.setScore(mission.score);
+		missionAdded.setName(mission.name);
+		missionAdded.setDescription(mission.description);
+		entityManager.persist(missionAdded);
 	}
 
 	@Override

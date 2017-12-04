@@ -42,5 +42,4 @@ public interface AdminService {
 	boolean findByUserName(String userName);	
 	UserInterface save(UserInterface user) ;
 	CommentInterface saveComment(CommentInterface comment);	
-	//CommentInterface getComment(CommentInterface comment);
 }

@@ -5,10 +5,16 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.github.openplay.model.impl.Answers;
 import com.github.openplay.model.impl.Question;
 import com.github.openplay.service.AnswersService;
-
+@Service
+@Transactional
+@Component
 public class AnswersServiceImpl implements AnswersService {
 	@PersistenceContext
 	public EntityManager entityManager;
@@ -41,7 +47,7 @@ public class AnswersServiceImpl implements AnswersService {
 	public void editAnswers(Answers answers) {
 		// TODO Auto-generated method stub
 		Question question=entityManager.getReference(Question.class, answers.question.questionId);
-		Answers AnswersEdit = new Answers();
+		Answers AnswersEdit = entityManager.getReference(Answers.class, answers.answerId);
 		AnswersEdit.setAnswer(answers.answer);
 		AnswersEdit.setAnswerValue(answers.answer_value);
 		AnswersEdit.setQuestions(question);

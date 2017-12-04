@@ -5,21 +5,29 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.github.openplay.model.impl.Mission;
 import com.github.openplay.model.impl.Question;
+import com.github.openplay.service.QuestionService;
 
-public class QuestionServiceImpl {
+@Service
+@Transactional
+@Component
+public class QuestionServiceImpl implements QuestionService {
 	@PersistenceContext
 	public EntityManager entityManager;
 
 	public void createQuestion(Question question) {
 		// TODO Auto-generated method stub
 		Mission mission=entityManager.getReference(Mission.class, question.mission.missionId);
-		Question QuestionAdded = new Question();
-		QuestionAdded.setQuestion(question.question);
-		QuestionAdded.setScore(question.score);
-		QuestionAdded.setMission(mission);
-		entityManager.persist(QuestionAdded);
+		Question questionAdded = new Question();
+		questionAdded.setQuestion(question.question);
+		questionAdded.setScore(question.score);
+		questionAdded.setMission(mission);
+		entityManager.persist(questionAdded);
 		
 	}
 
@@ -36,12 +44,12 @@ public class QuestionServiceImpl {
 	public void editQuestion(Question question) {
 		// TODO Auto-generated method stub
 		Mission mission=entityManager.getReference(Mission.class, question.mission.missionId);
-		Question QuestionEdit = new Question();
-		QuestionEdit.setQuestion(question.question);
-		QuestionEdit.setScore(question.score);
-		QuestionEdit.setMission(mission);
+		Question questionEdit = entityManager.getReference(Question.class, question.questionId);
+		questionEdit.setQuestion(question.question);
+		questionEdit.setScore(question.score);
+		questionEdit.setMission(mission);
 		
-		entityManager.merge(QuestionEdit);
+		entityManager.merge(questionEdit);
 		
 	}
 
