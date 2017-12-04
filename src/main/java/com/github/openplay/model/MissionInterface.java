@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.github.openplay.model.impl.Campaign;
 import com.github.openplay.model.impl.Difficulties;
+import com.github.openplay.model.impl.Interest;
 
 public interface MissionInterface {
 
@@ -25,6 +26,9 @@ public interface MissionInterface {
 
 
 	// Fk functions
+	public Interest getInterest();
+
+	public void setInterest(Interest interest);
 
 	public Campaign getCampaign();
 

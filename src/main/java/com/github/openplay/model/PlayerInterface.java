@@ -2,7 +2,7 @@
 //
 //import java.util.Date;
 //
-//public interface StudentInterface {
+//public interface PlayerInterface {
 //
 //	public Long getId();
 //
