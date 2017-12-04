@@ -13,10 +13,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.annotations.Proxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.github.openplay.model.impl.Campaign;
 import com.github.openplay.model.impl.Mission;
 import com.github.openplay.service.MissionService;
 
@@ -25,6 +27,7 @@ import com.github.openplay.service.MissionService;
 @Path("missionResource")
 @XmlRootElement
 public class MissionResource {
+	
 	@Autowired
 	public MissionService missionServImpl;
 	
@@ -38,10 +41,11 @@ public class MissionResource {
 	
 	@GET @Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Mission getMission(@PathParam("id") int id){
+	public Mission getMissionById(@PathParam("id") int id){
 		Mission mission= missionServImpl.getMission(id);
 		return mission;
 	}
+	
 	
 	@GET @Path("list")
 	@Produces(MediaType.APPLICATION_JSON)

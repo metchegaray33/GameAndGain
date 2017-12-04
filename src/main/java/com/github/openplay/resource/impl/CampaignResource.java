@@ -1,62 +1,63 @@
 package com.github.openplay.resource.impl;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.stereotype.Controller;
-
+import org.springframework.stereotype.Component;
 import com.github.openplay.service.CampaignService;
 import com.github.openplay.model.impl.Campaign;
 
-@Controller
-@RequestMapping("/campaigns")
+@Component
+@Path("campaignResource")
+@XmlRootElement
 public class CampaignResource {
 	
 	@Autowired
 	public CampaignService campaignServImpl;
 	
-	@RequestMapping(value="/create", method=RequestMethod.POST, produces="application/json", consumes="application/json")
-	@ResponseBody
-	@ResponseStatus(HttpStatus.CREATED)
+	@POST
+	@Path("create")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public void createCampaign(@RequestBody Campaign campaign){
 		campaignServImpl.createCampaign(campaign);
 	}
-
 	
-	@RequestMapping(value="/{id}", produces="application/json", method=RequestMethod.GET)
-	@ResponseBody
-	public Campaign getCampaginById(@PathVariable("id") int id){
+	@GET @Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Campaign getCampaginById(@PathParam("id") int id){
 		Campaign campaign= campaignServImpl.getCampaign(id);
 		return campaign;
 	}
 	
-	@RequestMapping(value="/list", produces="application/json", method=RequestMethod.GET)
-	@ResponseBody
+	@GET @Path("list")
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Campaign> getAllCampaigns(){
-		List<Campaign> campaignList = campaignServImpl.getAllCampaigns();
-		return campaignList;
+		return campaignServImpl.getAllCampaigns();
 	}
 	
 	
-	@RequestMapping(value="/update", method=RequestMethod.PUT, produces="application/json", consumes="application/json")
-	@ResponseBody
-	@ResponseStatus(HttpStatus.OK)
+	@PUT @Path("update")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public void editCampaign(@RequestBody Campaign campaign){
 		campaignServImpl.editCampaign(campaign);
 	}
 	
 	
-	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE, produces="application/json")
-	@ResponseBody
-	@ResponseStatus(HttpStatus.OK)
-	public void deleteCampaign(@PathVariable("id") int id){
+	@DELETE @Path("delete/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void deleteCampaign(@PathParam("id") int id){
 		campaignServImpl.deleteCampaign(id);
 	}
 

@@ -25,42 +25,43 @@ import com.github.openplay.service.QuestionService;
 @Path("questionResource")
 @XmlRootElement
 public class QuestionResource {
+	
 	@Autowired
-	public QuestionService QuestionServImpl;
+	public QuestionService questionServImpl;
 	
 	@POST
 	@Path("create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void createQuestion(@RequestBody Question Question){
-		QuestionServImpl.createQuestion(Question);
+		questionServImpl.createQuestion(Question);
 	}
 	
 	@GET @Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Question getQuestion(@PathParam("id") int id){
-		Question Question= QuestionServImpl.getQuestion(id);
+		Question Question= questionServImpl.getQuestion(id);
 		return Question;
 	}
 	
 	@GET @Path("list")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Question> getAllQuestions(){
-		return QuestionServImpl.getAllQuestion();
+		return questionServImpl.getAllQuestion();
 	}
 	
 	
 	@PUT @Path("update")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void editQuestion(@RequestBody Question Question){
-		QuestionServImpl.editQuestion(Question);
+	public void editQuestion(@RequestBody Question question){
+		questionServImpl.editQuestion(question);
 	}
 	
 	
 	@DELETE @Path("delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void deleteQuestion(@PathParam("id") int id){
-		QuestionServImpl.deleteQuestion(id);
+		questionServImpl.deleteQuestion(id);
 	}
 }

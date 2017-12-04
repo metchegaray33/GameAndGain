@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.github.openplay.model.impl.Answers;
 import com.github.openplay.service.AnswersService;
+import com.github.openplay.service.impl.AnswersServiceImpl;
 
 
 
@@ -27,27 +28,27 @@ import com.github.openplay.service.AnswersService;
 @XmlRootElement
 public class AnswersResource {
 	@Autowired
-	public AnswersService AnswersServImpl;
+	public AnswersService AnswersServimpl;
 	
 	@POST
 	@Path("create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void createAnswers(@RequestBody Answers answers){
-		AnswersServImpl.createAnswers(answers);
+		AnswersServimpl.createAnswers(answers);
 	}
 	
 	@GET @Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Answers getAnswers(@PathParam("id") int id){
-		Answers Answers= AnswersServImpl.getAnswers(id);
+		Answers Answers= AnswersServimpl.getAnswers(id);
 		return Answers;
 	}
 	
 	@GET @Path("list")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Answers> getAllAnswerss(){
-		return AnswersServImpl.getAllAnswers();
+		return AnswersServimpl.getAllAnswers();
 	}
 	
 	
@@ -55,13 +56,13 @@ public class AnswersResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void editAnswers(@RequestBody Answers answers){
-		AnswersServImpl.editAnswers(answers);
+		AnswersServimpl.editAnswers(answers);
 	}
 	
 	
 	@DELETE @Path("delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void deleteAnswers(@PathParam("id") int id){
-		AnswersServImpl.deleteAnswers(id);
+		AnswersServimpl.deleteAnswers(id);
 	}
 }

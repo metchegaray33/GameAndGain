@@ -41,6 +41,13 @@ public class AdminResource implements AdminResourceInterface {
 		return Response.ok(new Viewable("/signup")).build();
 	}
 
+	@GET
+	@Path("test")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response test() {
+		return Response.ok().build();
+	}
+	
 	@POST
 	@Path("signup")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -115,19 +122,19 @@ public class AdminResource implements AdminResourceInterface {
 	}
 	
 	@GET
-	@Path("temporalComment")
+	@Path("comment")
 	@Produces(MediaType.TEXT_HTML)
-	public Response createComment() {
-		return Response.ok(new Viewable("/TemporalComment")).build();
+	public Response getComments() {
+		return Response.ok(new Viewable("/comment")).build();
 	}
 	
 	@POST
-	@Path("temporalComment")
+	@Path("createComment")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
 	public Response createComment(
-			@FormParam("users_UserIdFrom") String users_UserIdFrom,
-			@FormParam("users_UserIdTo") String users_UserIdTo,
+			@FormParam("userIdFrom") String users_UserIdFrom,
+			@FormParam("userIdTo") String users_UserIdTo,
 			@FormParam("date") String date,
 			@FormParam("comment") String comment
 			)
@@ -139,17 +146,15 @@ public class AdminResource implements AdminResourceInterface {
 		}
 
 		Comment newComment = new Comment();
-
-
-		newComment.setUsers_userIdFrom(Integer.parseInt(users_UserIdFrom));
-		newComment.setUsers_userIdTo(Integer.parseInt(users_UserIdTo));
+		
+		newComment.setUsers_UserIdFrom(Integer.parseInt(users_UserIdFrom));
+		newComment.setUsers_UserIdTo(Integer.parseInt(users_UserIdTo));
 		newComment.setDate(new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy").parse(date).getTime()));
 		newComment.setComment(comment);
 		
-		
 		adminService.saveComment(newComment);
-		return Response.ok().entity(new Viewable("/success")).build();
+		return Response.ok().entity(new Viewable("/comment")).build();
 	}
-
 	
 }
+
