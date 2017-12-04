@@ -1,0 +1,411 @@
+{
+	"variables": [],
+	"info": {
+		"name": "trials",
+		"_postman_id": "8d10ecae-3a6f-9f0d-88c5-7076d9012725",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Campaign-Get Only one",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/campaignResource/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":4,\n\t\"name\":\"BIG ASS TEST\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"id\":1,\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Campaign-List",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/campaignResource/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":4,\n\t\"name\":\"BIG ASS TEST\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"id\":1,\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Campaign-Create",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/campaignResource/create/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"BIG ASS TEST\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"id\":1,\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Campaign-Edit",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/campaignResource/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":2,\n\t\"name\":\"The New NAME\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Campaign - Delete",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/campaignResource/delete/6",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":4,\n\t\"name\":\"The New NAME\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mission - Get only one",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/missionResource/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":4,\n\t\"name\":\"The New NAME\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mission - List",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/missionResource/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaignsId\":4,\n\t\"name\":\"The New NAME\",\n\t\"description\":\"testtest\",\n\t\"maxScore\":10000,\n\t\"startDate\":\"2017-11-14T00:00:00\",\n\t\"endDate\":\"2017-11-17T00:00:00\",\n\t\"campaignState\":{\"campaign_StateId\":1},\n\t\"campaignType\":{\"campaign_TypeId\":1},\n\t\"users\":{\"userId\":1},\n\t\"project\":{\"projectId\":1},\n\t\"interest\":{\"interestId\":3},\n\t\"user\":{\"userId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mission -Create",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/missionResource/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"DA MISSION\",\n\t\"description\":\"test test\",\n\t\"score\":10,\n\t\"campaign\":{\"campaignsId\":1},\n\t\"difficulty\":{\"difficultyId\":1},\n\t\"interest\":{\"interestId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mission - Edit",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/missionResource/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"missionId\":2,\n\t\"name\":\"DA MISSION NEW NAME\",\n\t\"description\":\"test test\",\n\t\"score\":10,\n\t\"campaign\":{\"campaignsId\":1},\n\t\"difficulty\":{\"difficultyId\":1},\n\t\"interest\":{\"interestId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mission - Delete",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/missionResource/delete/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"missionId\":2,\n\t\"name\":\"DA MISSION NEW NAME\",\n\t\"description\":\"test test\",\n\t\"score\":10,\n\t\"campaign\":{\"campaignsId\":1},\n\t\"difficulty\":{\"difficultyId\":1},\n\t\"interest\":{\"interestId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Question - Get only one",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/questionResource/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"missionId\":2,\n\t\"name\":\"DA MISSION NEW NAME\",\n\t\"description\":\"test test\",\n\t\"score\":10,\n\t\"campaign\":{\"campaignsId\":1},\n\t\"difficulty\":{\"difficultyId\":1},\n\t\"interest\":{\"interestId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Question - List",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/questionResource/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"missionId\":2,\n\t\"name\":\"DA MISSION NEW NAME\",\n\t\"description\":\"test test\",\n\t\"score\":10,\n\t\"campaign\":{\"campaignsId\":1},\n\t\"difficulty\":{\"difficultyId\":1},\n\t\"interest\":{\"interestId\":1}\n\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Question - Create",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/questionResource/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question\":\"new question\",\n\t\"score\":10,\n\t\"mission\":{\"missionId\":1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Question - Edit",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/questionResource/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\":2,\n\t\"question\":\"updated name\",\n\t\"score\":100,\n\t\"mission\":{\"missionId\":1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Question - Delete",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/questionResource/delete/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\":2,\n\t\"question\":\"updated name\",\n\t\"score\":100,\n\t\"mission\":{\"missionId\":1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Answers - Get only one",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/answersResource/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\":2,\n\t\"question\":\"updated name\",\n\t\"score\":100,\n\t\"mission\":{\"missionId\":1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Answers - List",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/answersResource/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\":2,\n\t\"question\":\"updated name\",\n\t\"score\":100,\n\t\"mission\":{\"missionId\":1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Answers - Create",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/answersResource/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"answer\": \"new_answer\",\n    \"answer_value\": true,\n    \"question\": {\"questionId\": 1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Answers - Edit",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/answersResource/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"answerId\":2,\n    \"answer\": \"updated_answer\",\n    \"answer_value\": true,\n    \"question\": {\"questionId\": 1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Answers - Delete",
+			"request": {
+				"url": "localhost:8080/GameAndGain/webapi/answersResource/delete/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"answerId\":2,\n    \"answer\": \"updated_answer\",\n    \"answer_value\": true,\n    \"question\": {\"questionId\": 1}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
