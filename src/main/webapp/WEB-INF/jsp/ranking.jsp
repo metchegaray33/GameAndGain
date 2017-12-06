@@ -1,6 +1,3 @@
-
-
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -51,8 +48,14 @@
 	padding: 50px;
 }
 
-
-
+.results{
+	padding:0 50px;
+	color: #ce5f5f;
+	font-weight:bold;
+}
+#new_signup{
+	height:initial;
+}
 </style>
 
 </head>
@@ -70,7 +73,7 @@
 		</div>
 		
 		<div class="menu_bar">
-			<a href="#" class="menu_bar-link">INICIO</a>
+			<a href="../../" class="menu_bar-link">INICIO</a>
 			<a href="#" class="menu_bar-link">MI PERFIL</a>
 			<a href="#" class="menu_bar-link">JUGAR</a>
 			<a href="#" class="menu_bar-link">RANKINGS</a>
@@ -105,18 +108,22 @@
 		<div class="green">${it.message}</div>
 	</c:if>
 	
-	<section class="signup_section">
+	<section id=new_signup class="signup_section">
 		<table class="signup_section-table">
 				<th class="signup_section-table-header">Ranking</th>
 		</table>
 	
 	<form action="getRanking" method="post">
-		<label class="signup_section-form-labels centpadding">Nombre del usuario  </label>
+		<label class="signup_section-form-labels centpadding">Nombre del usuario</label>
 		<input type="text" class="signup_section-form-inputs" value="${it.campaignsHasUsers.name}" name="name" id = "userId" placeholder="Usuario"/>
 		<input type="submit" value="IR" id="nameT" class="btn btn-primary signup_section-form-btns lblpadding">
-		<p><label class="signup_section-form-labels centpadding">Nombre  </label></p>
+		<p><label class="signup_section-form-labels centpadding">Nombre</label></p>
+		<p class="signup_section-form-labels results">${it.name}</p>
 		<p><label class="signup_section-form-labels centpadding">Puntos Totales Acumulados  </label></p>
+		<p class="signup_section-form-labels results">${it.totalScore}</p>
 		<p><label class="signup_section-form-labels centpadding">Ultimas Medallas Recibidas  </label></p>
+		<p class="signup_section-form-labels results">${it.uBadges}</p>
+		
 	</form>
 	</section>
 	
