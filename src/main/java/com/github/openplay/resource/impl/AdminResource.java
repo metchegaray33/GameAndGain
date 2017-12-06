@@ -1,10 +1,7 @@
 package com.github.openplay.resource.impl;
 
-import java.io.PrintWriter;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +10,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -23,35 +21,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.github.openplay.model.impl.Badge;
 import com.github.openplay.model.impl.Comment;
 import com.github.openplay.model.impl.User;
 import com.github.openplay.resource.AdminResourceInterface;
 import com.github.openplay.service.AdminService;
-
-import javax.servlet.http.HttpServletRequest; 
-import javax.servlet.http.HttpServletResponse; 
-import org.springframework.beans.factory.annotation.Autowired; 
-import org.springframework.stereotype.Controller; 
-import org.springframework.web.bind.annotation.ModelAttribute; 
-import org.springframework.web.bind.annotation.RequestMapping; 
-import org.springframework.web.bind.annotation.RequestMethod; 
-import org.springframework.web.servlet.ModelAndView;
-import java.lang.Object;
-import org.springframework.web.servlet.ModelAndView;
-import java.util.List;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Component
 @Path("adminResource")
@@ -208,7 +186,28 @@ public class AdminResource implements AdminResourceInterface {
 	@Path("profile")
 	@Produces(MediaType.TEXT_HTML)
 	public Response profile() {
-		return Response.ok(new Viewable("/profile")).build();
+		
+		Map<String, Object> map = new HashMap<String, Object>(); 
+        User userfound = adminService.showUser(4);
+        map.put("info", userfound);
+        
+       
+        
+        
+		return Response.ok(new Viewable("/profile", map)).build();
+	}
+	
+	@POST
+	@Path("searchResult")
+	@Produces(MediaType.TEXT_HTML)
+	public Response searchResult(@FormParam("seachW") String search) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+        List<User> usr = adminService.showSearchResult(search);
+        map.put("word", usr);
+        
+        
+        return Response.ok().entity(new Viewable("/searchResult",map)).build();
 	}
 	
 	//GET PROFILE INFORMATION
@@ -339,46 +338,48 @@ public class AdminResource implements AdminResourceInterface {
 		@Path("badges")
 		@Produces(MediaType.TEXT_HTML)
 		public Response badges() {
-			return Response.ok(new Viewable("/badges")).build();
+			Map<String, Object> map = new HashMap<String, Object>();
+	       
+	        List<Badge> badges = adminService.showBadges();
+	        map.put("word", badges);
+			return Response.ok(new Viewable("/badges", map)).build();
+			
 		}
 	
 	//SHOW BADGES - GETS ALL BADGES INFORMATION
-	@GET
-	@Path("showBadges")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_HTML)
-	public Response showBadges(){
-		List<Badge> badges = adminService.showBadges();
-		for(int i = 0; i < badges.size(); i++) {
-			System.out.println(badges.get(i).getBadgeId());
-            System.out.println(badges.get(i).getName());
-            System.out.println(badges.get(i).getValue()); 
-        }
-		return null;
-	}
-	
+//	@GET
+//	@Path("showBadges")
+//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+//	@Produces(MediaType.TEXT_HTML)
+//	public Response showBadges(){
+//		List<Badge> badges = adminService.showBadges();
+//		for(int i = 0; i < badges.size(); i++) {
+//			System.out.println(badges.get(i).getBadgeId());
+//            System.out.println(badges.get(i).getName());
+//            System.out.println(badges.get(i).getValue()); 
+//        }
+//		return null;
+//	}
+//	
 	//UPDATE BADGE
 	@POST
 	@Path("updateBadge")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
 	public Response updateBadge(
-			
 			@FormParam("update_badgeName") String badgeName,
-			@FormParam("update_badgeValue") String badgeValue,
-			@FormParam("update_badgeId") String badgeId)
+			@FormParam("update_badgeValue") String badgeValue)
 			throws ParseException {
-				if (badgeName == null||badgeId == null||badgeValue == null) {
+				if (badgeName == null ||badgeValue == null) {
 					return Response.status(Status.PRECONDITION_FAILED).build();
 				}
 				Badge newBadge = new Badge();
 				newBadge.setName(badgeName);
 				newBadge.setValue(Integer.parseInt(badgeValue));
-				newBadge.setBadgeId(Integer.parseInt(badgeId));
 								
 				adminService.updateBadge(newBadge);
 				
-				return Response.ok().entity(new Viewable("/success")).build();
+				return null;
 	}	
 	
 	//CREATE BADGE
@@ -402,16 +403,7 @@ public class AdminResource implements AdminResourceInterface {
 					return Response.ok().entity(new Viewable("/success")).build();
 		}	
 		
-		@RequestMapping(value="#")
-	    public ModelAndView viewBadges(Model model) {
-	        Map<String, List<Badge>> badge =
-	                new HashMap<String, List<Badge>>();
-	       
-	        badge.put("badge", adminService.showBadges());
-	        System.out.println(new ModelAndView("badgeList", badge));
-	        return new ModelAndView("badgeList", badge);
-	        
-	    }
+		
 	
 	//DELETE BADGE
 	@POST
@@ -428,6 +420,33 @@ public class AdminResource implements AdminResourceInterface {
 				adminService.deleteBadge(Integer.parseInt(badgeId));
 				
 				return Response.ok().entity(new Viewable("/success")).build();
-	}	
+	}
 
+	@Override
+	public Response showBadges() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Response showUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Response showSearchResult(String search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+		
+	
+	
+	
+	
+	
 }

@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -65,6 +66,7 @@
 		    </form>
 		</div>
 		<button class="badge-btns--btn" onclick="showBadgesTable()">Modifica Insignias</button>
+		<form id="create-badge--form" action="updateBadge" method="post">
 		<div id="badgesTable">
 			<div class="table">
 			    <div class="row header">
@@ -78,66 +80,29 @@
 			        Valor
 			      </div>
 			    </div>
+			    <c:forEach var="i" items="${it.word}">
+			    <div class="row">
+			      <div class="cell">
+			        ${i.badgeId}
+			      </div>
+			      <div class="cell">
+			        <input type="text" name="badgeName" value="${i.name}"/>
+			   
+			      </div>
+			      <div class="cell">
+			        <label for="range">
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5" value="${i.value}" />
+					</label>
+			      </div>
+			    </div>
+			    </c:forEach>
 			    
-			    <div class="row">
-			      <div class="cell">
-			        1
-			      </div>
-			      <div class="cell">
-			        <input type="text" name="badgeName" value="Nombre1">
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    
-			    <div class="row">
-			      <div class="cell">
-			        1
-			      </div>
-			      <div class="cell">
-			        <input type="text" name="badgeName" value="Nombre1">
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    
-			    <div class="row">
-			      <div class="cell">
-			        1
-			      </div>
-			      <div class="cell">
-			        <input type="text" name="badgeName" value="Nombre1">
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    			    
-			    <div class="row">
-			      <div class="cell">
-			        1
-			      </div>
-			      <div class="cell">
-			        <input type="text" name="badgeName" value="Nombre1">
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
 			    <!-- End of table -->
 			  </div>
-			  <input type="submit" class="submit-badge--btn" name="delete_updateBadge" value="Realizar Cambios">
+			  
+			  <input type="submit" class="submit-badge--btn" name="updateBadge" value="Realizar Cambios">
 		</div>
+		</form>
 		<button class="badge-btns--btn" onclick="showBagdesTableForDeleting()">Elimina Insignias</button>
 		<div id="badgesTable-delete">
 			<div class="table">
@@ -152,63 +117,21 @@
 			        Valor
 			      </div>
 			    </div>
-			    
+			     <c:forEach var="e" items="${it.word}">
 			    <div class="row">
 			      <div class="cell">
 			        <input type="radio">
 			      </div>
 			      <div class="cell">
-			        Nombre1
+			       ${e.name}
 			      </div>
 			      <div class="cell">
 			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
+					      ${e.value}
 					</label>
 			      </div>
 			    </div>
-			    
-			    <div class="row">
-			      <div class="cell">
-			        <input type="radio">
-			      </div>
-			      <div class="cell">
-			        Nombre1
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    
-			    <div class="row">
-			      <div class="cell">
-			        <input type="radio">
-			      </div>
-			      <div class="cell">
-			        Nombre1
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    			    
-			    <div class="row">
-			      <div class="cell">
-			        <input type="radio">
-			      </div>
-			      <div class="cell">
-			        Nombre1
-			      </div>
-			      <div class="cell">
-			        <label for="range">
-					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5"  value="${it.badges.badgeValue}"/>
-					</label>
-			      </div>
-			    </div>
-			    
+			    </c:forEach>  
 			  </div> <!-- End of table  -->
 			  <input type="submit" class="submit-badge--btn" name="delete_updateBadge" value="Eliminar">
 		</div>

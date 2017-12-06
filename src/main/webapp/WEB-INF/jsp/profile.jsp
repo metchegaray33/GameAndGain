@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -54,40 +55,38 @@
 		</table>
 			
 		<form:form class="div_profile-form" method="post" action="updateProfile">
-				<label for="firstNameInput" class="signup_section-form-labels">ID del Usuario</label>
-				<input type="text" class="div_profile-form-inputs" name="userId" id="userId" placeholder="userId" value="${it.user.userId}" />
+		 
+				
 				
 				<label for="firstNameInput" class="signup_section-form-labels">Nombre</label>
-				<input type="text" class="div_profile-form-inputs" name="firstName" id="firstNameInput" placeholder="Tomas" value="${it.user.firstName}" />
+				<input type="text" class="div_profile-form-inputs" name="firstName" id="firstNameInput" placeholder="${it.info.name}" value="${it.user.firstName}" />
 				
 				<label for="lastNameInput" class="signup_section-form-labels">Apellido</label>
-				<input type="text" class="div_profile-form-inputs" name="lastName" id="lastNameInput" placeholder="Vuka" value="${it.user.lastName}" />
+				<input type="text" class="div_profile-form-inputs" name="lastName" id="lastNameInput" placeholder="${it.info.lastname}" value="${it.user.lastName}" />
 				
 				<label for="emailAddressInput" class="signup_section-form-labels">Email</label>
-				<input type="text" class="div_profile-form-inputs" name="emailAddress" id="emailAddressInput" placeholder="tomas.vuka23@me.com" value="${it.user.emailAddress}" />
+				<input type="text" class="div_profile-form-inputs" name="emailAddress" id="emailAddressInput" placeholder="${it.info.mail}" value="${it.user.emailAddress}" />
 				
 				<label for="passwordInput" class="signup_section-form-labels">Password</label>
-				<input type="password" class="div_profile-form-inputs" name="password" id="passwordInput"  value="${it.user.password}" />					
+				<input type="password" class="div_profile-form-inputs" name="password" id="passwordInput"  value="${it.info.password}" />					
 				
 				<label for="birthdateInput" class="signup_section-form-labels">Fecha de Nacimiento</label>
 				<div class="date form_date"
 						data-date-format="mm/dd/yyyy" data-date-viewmode="years">
-						<c:set var="myDate">
-							<fmt:formatDate pattern="MM/dd/yyyy" value="${it.user.birthdate}" />
-						</c:set>
-						<input type="text" class="div_profile-form-inputs" name="birthdate" id="birthdateInput" placeholder="09/11/2001" value="${myDate}" />
+						
+						<input type="text" class="div_profile-form-inputs" name="birthdate" id="birthdateInput" placeholder="${it.info.birthdate}" value="${myDate}" />
 				</div>
 	
 									
 				<label for="phoneInput" class="signup_section-form-labels">Telefono</label>
-				<input type="text" class="div_profile-form-inputs" name="phone" id="phoneInput" placeholder="156660911" value="${it.user.phone}" />
+				<input type="text" class="div_profile-form-inputs" name="phone" id="phoneInput" placeholder="${it.info.phone}" value="${it.user.phone}" />
 										
 				<label for="countryInput" class="signup_section-form-labels">Pais</label>
-				<input type="text" class="div_profile-form-inputs" name="country" id="countryInput" placeholder="Argentina" value="${it.user.country}" />
+				<input type="text" class="div_profile-form-inputs" name="country" id="countryInput" placeholder="${it.info.country}" value="${it.user.country}" />
 										
 				<label for="interestInput" class="signup_section-form-labels">Interes</label>
 				<select class="signup_section-form-select" name="interest" id="interestInput" value="${it.user.interest}" >
-					  <option disabled selected>Selecciona un Interes</option>
+					  <option disabled selected>${it.info.interests_InterestId}</option>
 					  <option value="1">Educativo</option>
 					  <option value="2">Cultural</option>
 					  <option value="3">Ambiental</option>
@@ -95,7 +94,7 @@
 													
 				<label for="roleInput" class="signup_section-form-labels">Rol</label>
 				<select class="signup_section-form-select" name="role" id="roleInput" value="${it.user.role}">
-					  <option disabled selected>Selecciona un Rol</option>
+					  <option disabled selected>${it.info.roles_RoleId}</option>
 					  <option value="1" >Jugador</option>
 					  <option value="2">Donante</option>
 					  <option value="3">Beneficiario</option>

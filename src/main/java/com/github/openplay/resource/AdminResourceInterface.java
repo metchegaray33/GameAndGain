@@ -39,6 +39,10 @@ public interface AdminResourceInterface {
 	
 	public Response profile();
 	
+	public Response showUser(int id);
+	
+	public Response showSearchResult(String search);
+	
 	public Response getProfile(String userId) throws ParseException;
 	
 	public Response updateProfile(String userId, String emailAddress, String password, String firstName, 
@@ -54,8 +58,10 @@ public interface AdminResourceInterface {
 	public Response deleteBadge(String badgeId) throws ParseException;
 
 	public Response showBadges();
+	
+	
 
-	public Response updateBadge(String badgeName, String badgeValue, String badgeId) throws ParseException;
+	public Response updateBadge(String badgeName, String badgeValue) throws ParseException;
 	
 	
 }

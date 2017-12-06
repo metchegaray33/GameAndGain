@@ -2,6 +2,7 @@ package com.github.openplay.service.impl;
 
 import java.util.List;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,6 +96,20 @@ public class AdminServiceImpl implements  AdminService {
 		List<Badge> bdg = badgeRepository.showBadges();
 		return bdg;
 	}
+	
+	public List<User> showSearchResult(String search){
+		List<User> usrs = adminRepository.showSearchResult(search);
+		return usrs;
+	}
+	
+	@Transactional
+	public User showUser(int id){
+		
+		User userfound = adminRepository.showUser(id);
+		return userfound;
+	}
+
+
 
 }
 

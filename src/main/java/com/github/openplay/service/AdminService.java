@@ -34,10 +34,13 @@ package com.github.openplay.service;
 
 import java.util.List;
 
+
+
 import com.github.openplay.model.BadgeInterface;
 import com.github.openplay.model.CommentInterface;
 import com.github.openplay.model.UserInterface;
 import com.github.openplay.model.impl.Badge;
+import com.github.openplay.model.impl.User;
 
 
 public interface AdminService {
@@ -49,6 +52,8 @@ public interface AdminService {
 	CommentInterface saveComment(CommentInterface comment);	
 	BadgeInterface saveBadge(BadgeInterface badge);	
 	List<Badge> showBadges();
+	User showUser(int id);
+	List<User> showSearchResult(String search);
 	BadgeInterface updateBadge(BadgeInterface badge);
 	void deleteBadge(Integer badgeId);
 	public UserInterface getUser(Integer userId);

@@ -34,7 +34,9 @@
 			<!-- <a class="menu_bar-link" href="webapi/adminResource/profile">MI PERFIL</a> -->
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">JUGAR</a>
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">RANKINGS</a>
-			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
+			<form action="webapi/adminResource/searchResult" method="post">
+				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
+			</form>
 		</div>
 	</div>
 	
