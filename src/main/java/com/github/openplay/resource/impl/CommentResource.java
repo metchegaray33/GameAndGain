@@ -20,6 +20,13 @@ import org.glassfish.jersey.server.mvc.Viewable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+
 import com.github.openplay.model.CommentInterface;
 import com.github.openplay.model.impl.Comment;
 import com.github.openplay.resource.CommentResourceInterface;
@@ -63,12 +70,12 @@ public class CommentResource implements CommentResourceInterface {
 
 		newComment.setUsers_userIdFrom(Integer.parseInt(users_UserIdFrom));
 		newComment.setUsers_userIdTo(Integer.parseInt(users_UserIdTo));
-		newComment.setDate(new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy").parse(date).getTime()));
+		newComment.setDate(new java.sql.Date(new SimpleDateFormat("dd/MM/yyyy").parse(date).getTime()));
 		newComment.setComment(comment);
 		
 		
 		commentService.saveComment(newComment);
-		return Response.ok().entity(new Viewable("/success")).build();
+		return Response.ok().entity(new Viewable("/TemporalComment")).build();
 	}
 
 	
@@ -76,20 +83,15 @@ public class CommentResource implements CommentResourceInterface {
 	@Path("temporalGetComment")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public Response getComment(@FormParam("users_UserIdTo") String users_UserIdTo)
-			throws ParseException {
-
+	public Response getComment(@FormParam("users_UserIdTo") String users_UserIdTo) throws ParseException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<Comment> comments = commentService.getComment(Integer.parseInt(users_UserIdTo));
+		map.put("list", comments);
 		if (users_UserIdTo == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
 		
-		List<Comment> comments = commentService.getComment(Integer.parseInt(users_UserIdTo));
-		for (int i=0; i<comments.size(); i++){
-			System.out.println(comments.get(i).getComment());
-			System.out.println(comments.get(i).getDate());
-		}
-		
-		return Response.ok().entity(new Viewable("/success")).build();
+		return Response.ok().entity(new Viewable("/TemporalComment", map)).build();
 	}
 	
 }

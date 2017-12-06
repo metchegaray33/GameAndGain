@@ -2,6 +2,8 @@ package com.github.openplay.resource.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -45,20 +47,15 @@ public class GetCampaignResource implements GetCampaignResourceInterface{
 	@Produces(MediaType.TEXT_HTML)
 	public Response getCampaign(@FormParam("campaign") String campaign)
 			throws ParseException {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		Campaign cValues = getCampaignService.getCampaignId(campaign);
+		
+		map.put("campaignData", cValues);
 
 		if (campaign == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
-
-		Campaign cValues = getCampaignService.getCampaignId(campaign);
-		System.out.println("Descripcion: "+cValues.getDescription());
-		System.out.println("Puntos: "+cValues.getMaxScore());
-		System.out.println("Empieza: "+cValues.getStartDate());
-		System.out.println("Termina: "+cValues.getEndDate());
-		System.out.println("Estado: "+cValues.getCampaignState().getDescription());
-		System.out.println("Tipo: "+cValues.getCampaignType().getDescription());	
-		System.out.println("Interes: "+cValues.getInterest().getDescription());
-		
-		return Response.ok().entity(new Viewable("/success")).build();
+		return Response.ok().entity(new Viewable("/campaign", map)).build();
 	}
 }

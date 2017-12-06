@@ -2,7 +2,9 @@ package com.github.openplay.resource.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -46,15 +48,17 @@ public class RankingResource {
 	@Path("getRanking")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public Response getRanking(@FormParam("name") String name)
-			throws ParseException {
+	public Response getRanking(@FormParam("name") String name) throws ParseException {
 
 		if (name == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
-		
+		Map<String, Object> map = new HashMap<String, Object>();
 		List<UsersReceivesBadges> userBadges = rankingService.getBadge(name);
 		List<CampaignsHasUsers> scoresR = rankingService.getRanking(name);
+		
+		
+		
 		int scoreGeneral = 0;
 		int scoreBagdes = 0;
 		int badgeId = 0;
@@ -74,8 +78,13 @@ public class RankingResource {
 		
 		System.out.println("El scores general de " + name + " es: " + scoreGeneral);
 		System.out.println("El scores de los trofeos es: " + scoreBagdes);
+		map.put("name", name);
+		map.put("totalScore", scoreGeneral);
+		map.put("uBadges", scoreBagdes);
+		
+		
 
-		return Response.ok().entity(new Viewable("/ranking")).build();
+		return Response.ok().entity(new Viewable("/ranking", map)).build();
 	}
 
 }
