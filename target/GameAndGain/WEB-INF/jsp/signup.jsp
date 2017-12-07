@@ -48,9 +48,15 @@
 <body>
 
 	<div class="navbar">
-	<div class="logo_header">
-			<section class="logo_title"></section>
+	<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Registrarse</a>
+			<a class="access_menu-link" href="./login">Iniciar Sesión</a>
 		</div>
+	<div class="logo_header">
+				<a href="#">
+					<img src="../../assets/img/logo.png" class="logo_title"> 
+				</a>
+			</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">
@@ -60,10 +66,9 @@
 		</div>
 		
 		<div class="menu_bar">
-			<a href="#" class="menu_bar-link">INICIO</a>
-			<a href="#" class="menu_bar-link">MI PERFIL</a>
-			<a href="#" class="menu_bar-link">JUGAR</a>
-			<a href="#" class="menu_bar-link">RANKINGS</a>
+			<a href="../../." class="menu_bar-link">INICIO</a>
+			<a href="../../webapi/adminResource/not_logged_in" class="menu_bar-link">JUGAR</a>
+			<a href="../../webapi/adminResource/not_logged_in" class="menu_bar-link">RANKINGS</a>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 
 		</div>
@@ -143,11 +148,12 @@
 				  <option value="2">Donante</option>
 				  <option value="3">Beneficiario</option>
 				  <option value="4" >Gestor de Campañas</option>
+				  <option value="5" >Administrador</option>
 				</select>
 									
 			<div class="signup_section-form-btns">
-				<button class="btn btn-default">Cancel</button>
-				<button class="btn btn-primary" data-toggle="modal" data-target="#themodal">Submit</button>
+				<button class="btn btn-default btn-cancel">Cancelar</button>
+				<button class="btn btn-primary btn-login" data-toggle="modal" data-target="#themodal">Registrate!</button>
 				<div id="themodal" class="modal fade" data-backdrop="static">
 					<div class="modal-dialog">
 						<div class="modal-content">

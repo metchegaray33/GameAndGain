@@ -31,9 +31,14 @@
 
 
 	<div class="navbar">
-	<div class="logo_header">
-			<section class="logo_title"></section>
+	<div class="access_menu">
+			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
 		</div>
+	<div class="logo_header">
+				<a href="#">
+					<img src="../../assets/img/logo.png" class="logo_title"> 
+				</a>
+			</div>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">
@@ -44,7 +49,7 @@
 		
 		<div class="menu_bar">
 			<a href="#" class="menu_bar-link">INICIO</a>
-			<a href="#" class="menu_bar-link">MI PERFIL</a>
+			<a href="./profile" class="menu_bar-link">MI PERFIL</a>
 			<a href="#" class="menu_bar-link">JUGAR</a>
 			<a href="#" class="menu_bar-link">RANKINGS</a>
 			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
@@ -77,6 +82,9 @@
 				</tr>
 				
 			</table>
+			
+			<div class="play-btn">JUEGA AHORA!</div>
+			
 	</section>
 	
 	

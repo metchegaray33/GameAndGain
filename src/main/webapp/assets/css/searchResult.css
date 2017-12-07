@@ -43,7 +43,7 @@ body {
 /* HEADER */
 
 .logo_header{
-	height: 400px;
+	height: 300px;
 	font-family: quickBold;
 	text-align: center;
 	padding-top: 10%;
@@ -171,16 +171,17 @@ body {
 	text-decoration: none;
 }
 
-/* GAMES SECTION */
+/* PROFILES SECTION */
 
 .profile--section{
 	margin-top: 100px;
-	height: 450px;
-	width: 700px;
+	font-family: quickMedium;
+	height: 300px;
+	width: 400px;
 	margin-left: 30%;
 	background-color: #f0efe7;
 	border-radius:6px;
-	padding: 2px;
+	padding: 20px 100px;
 	box-shadow: 10px 10px 10px 0px #c6c5be;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -188,182 +189,40 @@ body {
 	position: relative;
 }
 
-.profile--table{
-	border-collapse: collapse;
-    width: 100%;
-    border: none;
+.profile--section td:first-child{
+	width: 100px;
+}
+
+.profilePic{
+	height: 100px;
+	display: block;
+	float: left;
+}
+
+.profileInformation{
+	float: right;
+	display: block;
+}
+
+.profile--btn{
 	
-}
-
-.profile--title--header{
-	background-color: #f1ed8c;
+	background-color: #55aaff;
     color: white;
-    font-size: 25px;
-    margin-bottom:10px;
-    heigth: 50px;
-    font-family: quickMedium; 
-    border-radius:6px;
-    border-radius:6px;
-    box-shadow: 5px 10px 0px #d8d47c;
-    bottom: 50px;
-   	padding-left:-10px;
-   
-}
-
-.profile--title--header ~ .profile--title--header{
-	background-color: #92afef;
-	box-shadow: 0px 10px 0px #7992c9;
-}
-
-.profile--title--header ~ .profile--title--header:hover{
-	background-color: #7992c9;
-}
-
-.profile--title--header:hover{
-	background-color: #d8d47c;
-}
-
-.profile--info{
-	font-size: 20px;
-    text-align: center;
-    font-family: quickMedium;
-    color: white; 
-    margin-top:-1px;
+    margin: auto;
     
-}
-
-.login_section-form-labels{
-	font-family: quickRegular;
-	font-size: 25px;
-	color: gray;
-	margin-left: 45%;
-	margin-bottom: -35px;
-	
-	
-}
-/* COLABORATORS */
-
-.collaborators_section{
-	margin-top: 650px;
-	height: 600px;
-	width: 950px;
-	margin-left: 22%;
-	background-color: #f0efe7;
-	border-radius:6px;
-	padding: 2px;
-	box-shadow: 10px 10px 10px 0px #c6c5be;
-	/*background-image: url(../img/think.png);*/
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 350px;
-}
-
-.collaborators_section-table{
-	border-collapse: collapse;
-    width: 100%;
-    border: none;
-}
-
-.collaborators_section-table-header {
-	background-color: #ce5f5f;
-    color: white;
-    font-size: 25px;
+    margin-top: 200px;
+    height: 40px;
+    font-size: 24px;
     text-align: center;
     font-family: quickMedium; 
+    box-shadow: 0px 6px 0px #518ae8;
+    
+    border: solid 1px #518ae8;
     border-radius:6px;
-    border-radius:6px;
-    box-shadow: 0px 10px 0px #aa4d4d;
-    bottom: 50px;
+    
+    display: block;
 }
 
-.collaborators_section-table-header:hover{
-	background-color: #aa4d4d;
-}
-
-.collaborators_section-table-col, .collaborators_section-table-header {
-    padding: 8px;
-}
-
-#slideshow, #slideshow-bene { 
-    margin-top: 10px; 
-    margin-right: 4px;
-    position: relative; 
-    width: 80%;
-    height: 80%;
-}
-
-#slideshow > div { 
-    position: absolute; 
-    top: 20px; 
-    left: 20px; 
-    right: 0px; 
-    bottom: 10px; 
-}
-
-#slideshow-bene > div {
-	position: absolute; 
-    top: 80px;
-    left: 500px; 
-    right: 0px; 
-    bottom: 10px;
-}
-
-.slider-imgs{
-	width:400px;
-	border-radius:6px;
-	border: 10px solid white;
-	outline: 1px solid gray;
-    outline-offset: -10px;
-	box-shadow: 10px 10px 0px lightgray; 
-}
-
-.paper{
-	width: 100px;
-	position: relative;
-	margin-top: 190px;
-	margin-left: 100px;
-}
-
-.paper-2{
-	width: 100px;
-	position: relative;
-	margin-top: -17px;
-	margin-left: 0px;
-}
-
-.paper-text{
-	position: absolute;
-	font-size: 20px;
-	color: gray;
-	width: 280px;
-	font-family: patrickRegular;
-	left: 60%;
-	top: 50px;
-	text-align: center;
-}
-
-.paper-text-2{
-	position: absolute;
-	font-size: 20px;
-	font-style: bold;
-	color: gray;
-	width: 280px;
-	font-family: patrickRegular;
-	left: 40%;
-	top: 40px;
-	text-align: center;
-}
-
-.arrow{
-	position: absolute;
-	margin-left: 350px;
-	height: 135px;
-	width: 135px;
-	background-image: url(../img/arrow.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100px;
-}
 
 /* FOOTER */
 

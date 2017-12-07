@@ -38,62 +38,65 @@
 		</div>
 	</div>
 	<c:forEach var="i" items="${it.word}">
-	<div class="profile--section">
-			
-			    <table class="profile--table">
-					<th class="profile--title--header"> ${i.name} ${i.lastname}</th>
+			<div class="profile--section">
+				<h2> ${i.name} ${i.lastname} </h2>
+				<p style="display: none">${i.userId}</p>
+				<img src="../../assets/img/pp.png" class="profilePic">
+				<table class="profileInformation">
+					<tr>
+						<td>Email</td>
+						<td>${i.mail}</td>
+					</tr>
+					<tr>
+						<td>Puntos</td>
+						<td>${i.points}</td>
+					</tr>
+					<tr>
+						<td>Pais</td>
+						<td>${i.country}</td>
+					</tr>
+					<tr>
+						<td>Interes</td>
+						<td>
+						<c:choose>
+							<c:when test="${i.interests_InterestId==1}">
+						       Educativo
+						    </c:when>  
+						    <c:when test="${i.interests_InterestId==2}">
+						    	Cultural
+						    </c:when>  
+						    <c:otherwise>
+						        Ambiental
+						    </c:otherwise>
+						</c:choose>
+						</td>
+					</tr>
+					<tr>
+						<td>Rol</td>
+						<td>
+						<c:choose>
+							<c:when test="${i.roles_RoleId==1}">
+							    Jugador
+						    </c:when>  
+						    <c:when test="${i.roles_RoleId==2}">
+						    	Donante
+						    </c:when>  
+						    <c:when test="${i.roles_RoleId==3}">
+						    	Beneficiario
+						    </c:when> 
+						    <c:when test="${i.roles_RoleId==4}">
+						    	Gestor de Campania
+						    </c:when> 
+						    <c:otherwise>
+						        Administrador
+						    </c:otherwise>
+						</c:choose>
+						</td>
+					</tr>
 				</table>
-				<br>
-				<label for="emailAddress" class="login_section-form-labels">Email</label>
-			    <p class="profile--info">${i.mail}</p>
-			    <label for="emailAddress" class="login_section-form-labels">Puntos</label>
-			    <p class="profile--info">${i.points}</p>
-			    <label for="emailAddress" class="login_section-form-labels">Interes</label>
-			    
-			    <c:choose>
-				<c:when test="${i.interests_InterestId==1}">
-				       <p class="profile--info">Educativo</p> 
-				        
-				    </c:when>  
-				    <c:when test="${i.interests_InterestId==2}">
-				    <p class="profile--info">Cultural</p>
-				    </c:when>  
-				    <c:otherwise>
-				        <p class="profile--info">Ambiental</p> 
-				       
-				    </c:otherwise>
-				</c:choose>
-			    <label for="emailAddress" class="login_section-form-labels">Rol</label>
-			    
-			     <c:choose>
-				<c:when test="${i.roles_RoleId==1}">
-				       <p class="profile--info">Jugador</p> 
-				        
-				    </c:when>  
-				    <c:when test="${i.roles_RoleId==2}">
-				    <p class="profile--info">Donante</p>
-				    </c:when>  
-				    <c:when test="${i.roles_RoleId==3}">
-				    <p class="profile--info">Beneficiario</p>
-				    </c:when> 
-				    <c:when test="${i.roles_RoleId==4}">
-				    <p class="profile--info">Gestor de Campania</p>
-				    </c:when> 
-				    
-				    <c:otherwise>
-				        <p class="profile--info">Administrador</p> 
-				       
-				    </c:otherwise>
-				</c:choose>
-			    <label for="emailAddress" class="login_section-form-labels">Pais</label>
-			    <p class="profile--info">${i.country}</p>
-			       
-			
-			   
-	</div>
+				<button class="profile--btn">Ver Perfil Completo</button>	   
+			</div>
 	 </c:forEach>
-			    
-			    <!-- End of table -->
 			
 </body>
 </html>
