@@ -12,9 +12,7 @@
 <!-- header -->
 	<div class="navbar">
 		<div class="access_menu">
-			<a class="access_menu-link" href="webapi/adminResource/signup">Registrarse</a>
-			<a class="access_menu-link" href="webapi/adminResource/login">Iniciar Sesión</a>
-			<!--  <a class="access_menu-link" href="webapi/adminResource/badges">Administrar Insignias</a> -->
+			
 		</div>
 		<div class="logo_header">
 			<a href="#">
@@ -39,28 +37,63 @@
 			</form>
 		</div>
 	</div>
-			<div class="table">
-			    <div class="row header">
-			     
-			      <div class="cell">
-			        Nombre
-			      </div>
-			      <div class="cell">
-			        Apellido
-			      </div>
-			    </div>
-			    <c:forEach var="i" items="${it.word}">
-			    <div class="row">
-			      <div class="cell">
-			        ${i.name}
-			      </div>
-			      <div class="cell">
-			        ${i.lastname}
-			      </div>
-			    </div>
-			    </c:forEach>
+	<c:forEach var="i" items="${it.word}">
+	<div class="profile--section">
+			
+			    <table class="profile--table">
+					<th class="profile--title--header"> ${i.name} ${i.lastname}</th>
+				</table>
+				<br>
+				<label for="emailAddress" class="login_section-form-labels">Email</label>
+			    <p class="profile--info">${i.mail}</p>
+			    <label for="emailAddress" class="login_section-form-labels">Puntos</label>
+			    <p class="profile--info">${i.points}</p>
+			    <label for="emailAddress" class="login_section-form-labels">Interes</label>
+			    
+			    <c:choose>
+				<c:when test="${i.interests_InterestId==1}">
+				       <p class="profile--info">Educativo</p> 
+				        
+				    </c:when>  
+				    <c:when test="${i.interests_InterestId==2}">
+				    <p class="profile--info">Cultural</p>
+				    </c:when>  
+				    <c:otherwise>
+				        <p class="profile--info">Ambiental</p> 
+				       
+				    </c:otherwise>
+				</c:choose>
+			    <label for="emailAddress" class="login_section-form-labels">Rol</label>
+			    
+			     <c:choose>
+				<c:when test="${i.roles_RoleId==1}">
+				       <p class="profile--info">Jugador</p> 
+				        
+				    </c:when>  
+				    <c:when test="${i.roles_RoleId==2}">
+				    <p class="profile--info">Donante</p>
+				    </c:when>  
+				    <c:when test="${i.roles_RoleId==3}">
+				    <p class="profile--info">Beneficiario</p>
+				    </c:when> 
+				    <c:when test="${i.roles_RoleId==4}">
+				    <p class="profile--info">Gestor de Campania</p>
+				    </c:when> 
+				    
+				    <c:otherwise>
+				        <p class="profile--info">Administrador</p> 
+				       
+				    </c:otherwise>
+				</c:choose>
+			    <label for="emailAddress" class="login_section-form-labels">Pais</label>
+			    <p class="profile--info">${i.country}</p>
+			       
+			
+			   
+	</div>
+	 </c:forEach>
 			    
 			    <!-- End of table -->
-			 </div>
+			
 </body>
 </html>

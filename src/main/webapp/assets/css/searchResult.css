@@ -173,57 +173,74 @@ body {
 
 /* GAMES SECTION */
 
-.games_section{
+.profile--section{
 	margin-top: 100px;
-	height: 400px;
-	width: 500px;
-	margin-left: 10%;
+	height: 450px;
+	width: 700px;
+	margin-left: 30%;
 	background-color: #f0efe7;
 	border-radius:6px;
 	padding: 2px;
 	box-shadow: 10px 10px 10px 0px #c6c5be;
-	background-image: url(../img/think.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 350px;
-	position: absolute;
+	position: relative;
 }
 
-.games_section-table{
+.profile--table{
 	border-collapse: collapse;
     width: 100%;
     border: none;
+	
 }
 
-.games_section-table-header {
+.profile--title--header{
 	background-color: #f1ed8c;
     color: white;
     font-size: 25px;
-    text-align: center;
+    margin-bottom:10px;
+    heigth: 50px;
     font-family: quickMedium; 
     border-radius:6px;
     border-radius:6px;
     box-shadow: 5px 10px 0px #d8d47c;
     bottom: 50px;
+   	padding-left:-10px;
+   
 }
 
-.games_section-table-header ~ .games_section-table-header{
+.profile--title--header ~ .profile--title--header{
 	background-color: #92afef;
 	box-shadow: 0px 10px 0px #7992c9;
 }
 
-.games_section-table-header ~ .games_section-table-header:hover{
+.profile--title--header ~ .profile--title--header:hover{
 	background-color: #7992c9;
 }
 
-.games_section-table-header:hover{
+.profile--title--header:hover{
 	background-color: #d8d47c;
 }
 
-.games_section-table-col, .games_section-table-header {
-    padding: 8px;
+.profile--info{
+	font-size: 20px;
+    text-align: center;
+    font-family: quickMedium;
+    color: white; 
+    margin-top:-1px;
+    
 }
 
+.login_section-form-labels{
+	font-family: quickRegular;
+	font-size: 25px;
+	color: gray;
+	margin-left: 45%;
+	margin-bottom: -35px;
+	
+	
+}
 /* COLABORATORS */
 
 .collaborators_section{
