@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-   <%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,7 +33,7 @@
 		</div>
 		
 		<div class="menu_bar">
-			<a class="menu_bar-link" href="#">INICIO</a>
+			<a class="menu_bar-link" href="../../">INICIO</a>
 			<a class="menu_bar-link" href="./profile">MI PERFIL</a>
 			<a class="menu_bar-link" href="#">RANKINGS</a>
 			<a class="menu_bar-link" href="#" onclick="contentMenu()"><i class="fa fa-bars fa-inverse bars " aria-hidden="true"></i></a>
@@ -45,9 +43,7 @@
 				    <a href="../../.">Cerrar Sesion</a>
 				  </div>
 			</div>
-			<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
-				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
-			</form>
+			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 		</div>
 		<!-- /.nav-collapse -->
 	</div>
@@ -84,18 +80,18 @@
 			        Valor
 			      </div>
 			    </div>
-			    <c:forEach varStatus="status" var="i" items="${it.word}">
+			    <c:forEach var="i" items="${it.word}">
 			    <div class="row">
 			      <div class="cell">
 			        ${i.badgeId}
 			      </div>
 			      <div class="cell">
-			        <input type="text" name="badgeName${status.index}" value="${i.name}"/>
+			        <input type="text" name="badgeName" value="${i.name}"/>
 			   
 			      </div>
 			      <div class="cell">
 			        <label for="range">
-					      <input type="range" name="badgeValue${status.index}" id="range" min="20" max="100" step="5" value="${i.value}" />
+					      <input type="range" name="badgeValue" id="range" min="20" max="100" step="5" value="${i.value}" />
 					</label>
 			      </div>
 			    </div>

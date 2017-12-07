@@ -14,7 +14,7 @@
 	<body>
 		<div class="navbar">
 		<div class="access_menu">
-			<a class="access_menu-link" href="./signup">Cerrar Sesion</a>
+			<
 		</div>
 		<div class="logo_header">
 			<a href="#">
@@ -30,9 +30,9 @@
 		</div>
 		
 		<div class="menu_bar">
-			<a href="#" class="menu_bar-link">INICIO</a>
-			<a href="#" class="menu_bar-link">MI PERFIL</a>
-			<a href="#" class="menu_bar-link">JUGAR</a>
+			<a class="menu_bar-link" href="/GameAndGain">INICIO</a>
+			<a href="/GameAndGain/webapi/adminResource/profile" class="menu_bar-link">MI PERFIL</a>
+			
 			<a href="#" class="menu_bar-link">RANKINGS</a>
 			<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
 				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">

@@ -30,7 +30,7 @@
 			</button>
 		</div>
 		<div class="menu_bar">
-			<a class="menu_bar-link" href="#">INICIO</a>
+			<a class="menu_bar-link" href="/GameAndGain">INICIO</a>
 			<!-- <a class="menu_bar-link" href="webapi/adminResource/profile">MI PERFIL</a> -->
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">JUGAR</a>
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">RANKINGS</a>

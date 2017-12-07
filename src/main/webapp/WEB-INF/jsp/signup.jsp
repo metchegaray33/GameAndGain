@@ -69,9 +69,7 @@
 			<a href="../../." class="menu_bar-link">INICIO</a>
 			<a href="../../webapi/adminResource/not_logged_in" class="menu_bar-link">JUGAR</a>
 			<a href="../../webapi/adminResource/not_logged_in" class="menu_bar-link">RANKINGS</a>
-			<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
-				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
-			</form>
+			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
 
 		</div>
 
