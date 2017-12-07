@@ -97,8 +97,8 @@
 					</tr>
 				</table>
 				<form action="showProfile" method="post">
-				<input style="display: none" name= "profileId" value=" ${i.userId}" />
-				<a class="profile--btn" href="/GameAndGain/webapi/adminResource/showProfile">Ver Perfil Completo</a>
+				<input style="display: none" name= "profileId" value="${i.userId}" />
+				 <input type="submit" class="profile--btn" name="showProfile" value="Ver Perfil Completo">
 				</form>	   
 			</div>
 	 </c:forEach>
