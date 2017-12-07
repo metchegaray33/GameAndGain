@@ -83,6 +83,14 @@ body {
 
 }
 
+.result{
+	margin-top:50px;
+	margin-left:20px;
+	font-family: quickBold;
+	color: gray;
+	font-size: 50px;
+}
+
 .menu_bar-link ~ .menu_bar-link{
 	background-color: #ce5f5f;
 	color: white;

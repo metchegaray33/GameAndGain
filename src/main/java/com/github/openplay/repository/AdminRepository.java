@@ -29,4 +29,8 @@ public interface AdminRepository extends JpaRepository<User, Long> {
 	@Query("select b from User b where b.name like CONCAT('%',:search,'%') or b.lastname like CONCAT('%',:search,'%') or b.country like CONCAT('%',:search,'%') or b.mail like CONCAT('%',:search,'%')") 
 	List<User> showSearchResult(@Param("search") String search);
 	
+	@Query("select u from User u where u.userId = :id") 
+	List<User> showUserById(@Param("id") String id);
+	
+	
 }

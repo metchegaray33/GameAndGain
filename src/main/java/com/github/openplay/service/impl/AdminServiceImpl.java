@@ -102,6 +102,12 @@ public class AdminServiceImpl implements  AdminService {
 		return usrs;
 	}
 	
+	public List<User> showUserById(String id){
+		List<User> usrs = adminRepository.showUserById(id);
+		return usrs;
+	}
+	
+	
 	@Transactional
 	public User showUser(int id){
 		

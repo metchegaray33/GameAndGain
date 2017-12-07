@@ -1,11 +1,16 @@
 package com.github.openplay.resource.impl;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -188,8 +193,10 @@ public class AdminResource implements AdminResourceInterface {
 	public Response profile() {
 		
 		Map<String, Object> map = new HashMap<String, Object>(); 
-        User userfound = adminService.showUser(4);
-        map.put("info", userfound);
+
+
+		
+		
         
        
         
@@ -205,9 +212,23 @@ public class AdminResource implements AdminResourceInterface {
 		Map<String, Object> map = new HashMap<String, Object>();
         List<User> usr = adminService.showSearchResult(search);
         map.put("word", usr);
+        map.put("searchword", search);
         
         
         return Response.ok().entity(new Viewable("/searchResult",map)).build();
+	}
+	
+	@POST
+	@Path("showProfile")
+	@Produces(MediaType.TEXT_HTML)
+	public Response showProfile(@FormParam("profileId") String profileId) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		User userfound = adminService.showUser(Integer.parseInt(profileId));
+        map.put("info", userfound);
+        
+        
+        return Response.ok().entity(new Viewable("/showProfile",map)).build();
 	}
 	
 	//GET PROFILE INFORMATION
@@ -361,26 +382,53 @@ public class AdminResource implements AdminResourceInterface {
 //		return null;
 //	}
 //	
-	//UPDATE BADGE
-	@POST
-	@Path("updateBadge")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_HTML)
-	public Response updateBadge(
-			@FormParam("update_badgeName") String badgeName,
-			@FormParam("update_badgeValue") String badgeValue)
-			throws ParseException {
-				if (badgeName == null ||badgeValue == null) {
-					return Response.status(Status.PRECONDITION_FAILED).build();
-				}
-				Badge newBadge = new Badge();
-				newBadge.setName(badgeName);
-				newBadge.setValue(Integer.parseInt(badgeValue));
-								
-				adminService.updateBadge(newBadge);
-				
-				return null;
-	}	
+		private HttpServletRequest request;
+		//UPDATE BADGE
+		@POST
+		@Path("updateBadge")
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		@Produces(MediaType.TEXT_HTML)
+		public Response updateBadge(){
+			
+		       
+	        List<Badge> badges = adminService.showBadges();
+	        
+	        System.out.println(request.getParameter(("badgeName"+0))); 
+			for(int i=0;i < badges.size() ;i++) {
+			    String recNo = request.getParameter(("badgeName"+i));
+			    System.out.println(recNo); 
+			    if(recNo != null){
+			    	
+			    Badge badge = new Badge();
+			    badge.setName(recNo);
+			    
+			    badge.setValue(Integer.parseInt(request.getParameter("badgeValue"+i)));
+			    adminService.updateBadge(badge);
+			    }
+			}
+					return null;
+		}	
+		
+//	//UPDATE BADGE
+//	@POST
+//	@Path("updateBadge")
+//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+//	@Produces(MediaType.TEXT_HTML)
+//	public Response updateBadge(
+//			@FormParam("update_badgeName") String badgeName,
+//			@FormParam("update_badgeValue") String badgeValue)
+//			throws ParseException {
+//				if (badgeName == null ||badgeValue == null) {
+//					return Response.status(Status.PRECONDITION_FAILED).build();
+//				}
+//				Badge newBadge = new Badge();
+//				newBadge.setName(badgeName);
+//				newBadge.setValue(Integer.parseInt(badgeValue));
+//								
+//				adminService.updateBadge(newBadge);
+//				
+//				return null;
+//	}	
 	
 	//CREATE BADGE
 		@POST
@@ -439,6 +487,10 @@ public class AdminResource implements AdminResourceInterface {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	
 
 	
 

@@ -34,7 +34,9 @@
 			<a href="#" class="menu_bar-link">MI PERFIL</a>
 			<a href="#" class="menu_bar-link">JUGAR</a>
 			<a href="#" class="menu_bar-link">RANKINGS</a>
-			<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
+			<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
+				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
+			</form>
 
 		</div>
 

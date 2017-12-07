@@ -36,6 +36,7 @@ import java.util.List;
 
 
 
+
 import com.github.openplay.model.BadgeInterface;
 import com.github.openplay.model.CommentInterface;
 import com.github.openplay.model.UserInterface;
@@ -54,6 +55,7 @@ public interface AdminService {
 	List<Badge> showBadges();
 	User showUser(int id);
 	List<User> showSearchResult(String search);
+	List<User> showUserById(String id);
 	BadgeInterface updateBadge(BadgeInterface badge);
 	void deleteBadge(Integer badgeId);
 	public UserInterface getUser(Integer userId);

@@ -31,7 +31,9 @@
 
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
+				<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
+				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
+			</form>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/GameAndGain">Home</a></li>

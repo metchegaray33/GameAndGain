@@ -41,7 +41,9 @@
 				    <a href="./badges">Cerrar Sesion</a>
 				  </div>
 			</div>
-				<input class="menu_bar-link search" type="text" name="searchIn" placeholder="Buscar">
+				<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
+				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
+			</form>
 		</div>
 		<!-- /.nav-collapse -->
 	</div>

@@ -60,8 +60,7 @@ public interface AdminResourceInterface {
 	public Response showBadges();
 	
 	
-
-	public Response updateBadge(String badgeName, String badgeValue) throws ParseException;
+	public Response updateBadge();
 	
 	
 }

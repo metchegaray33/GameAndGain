@@ -32,12 +32,14 @@
 			<!-- <a class="menu_bar-link" href="webapi/adminResource/profile">MI PERFIL</a> -->
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">JUGAR</a>
 			<a class="menu_bar-link" href="webapi/adminResource/not_logged_in">RANKINGS</a>
-			<form action="webapi/adminResource/searchResult" method="post">
+			<form action="/GameAndGain/webapi/adminResource/searchResult" method="post">
 				<input class="menu_bar-link search" type="text" name="seachW" placeholder="Buscar">
 			</form>
 		</div>
 	</div>
+	<a class="result">Resultados para "${it.searchword}":</a>
 	<c:forEach var="i" items="${it.word}">
+	
 			<div class="profile--section">
 				<h2> ${i.name} ${i.lastname} </h2>
 				<p style="display: none">${i.userId}</p>
@@ -94,7 +96,10 @@
 						</td>
 					</tr>
 				</table>
-				<button class="profile--btn">Ver Perfil Completo</button>	   
+				<form action="showProfile" method="post">
+				<input style="display: none" name= "profileId" value=" ${i.userId}" />
+				<a class="profile--btn" href="/GameAndGain/webapi/adminResource/showProfile">Ver Perfil Completo</a>
+				</form>	   
 			</div>
 	 </c:forEach>
 			
