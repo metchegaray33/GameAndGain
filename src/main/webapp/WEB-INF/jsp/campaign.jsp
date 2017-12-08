@@ -76,7 +76,7 @@
 	<script src="../../bootstrap/js/bootstrap.js"></script>
 	<script src="../../datepicker/js/bootstrap-datepicker.js"></script>
 	
-	<section class="signup_section">
+	<section id="new_signup" class="signup_section">
 		<table class="signup_section-table">
 				<th class="signup_section-table-header">Campaña</th>
 		</table>
